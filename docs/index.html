@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <title>PAR - Denoising</title>
     <style>
         body {
@@ -33,7 +34,8 @@
             text-align: center;
         }
         th {
-            background-color: #3498db;
+            /* background-color: #3498db; */
+            background-color: rgba(26, 57, 124, 0.616);
             color: white;
             font-weight: bold;
         }
@@ -56,20 +58,33 @@
         }
         #filePath {
             margin-top: 10px;
-            font-size: 1.2em;
+            font-size: 1.0em;
             color: #333;
         }
 
         #filePath2 {
             margin-top: 10px;
-            font-size: 1.2em;
+            font-size: 1.0em;
             color: #333;
         }
         #filePath3 {
             margin-top: 10px;
-            font-size: 1.2em;
+            font-size: 1.0em;
             color: #333;
         }
+        #filePath4 {
+            margin-top: 10px;
+            font-size: 1.0em;
+            color: #333;
+        }
+
+        #filePath5 {
+            margin-top: 10px;
+            font-size: 1.0em;
+            color: #333;
+        }
+
+
         .container {
             margin: 10px;
             padding: 10px;
@@ -98,7 +113,8 @@
 <body>
     <div class="container">
         <h1>PLUG-AND-PLAY AUDIO RESTORATION WITH DIFFUSION DENOISER</h1>
-        <p><strong>Abstract</strong></p>
+        <p>This is supplementary material to the eponymous paper submitted to the IWAENC 2024 conference.</p>
+        <p><strong>Abstract</strong></p>        
         <p>There have been a plethora of methods developed to tackle diverse audio reconstruction problems. Recently, deep generative models have affected this field strongly, some of them allowing to solve multiple problems with only a minimal need for adaptation. However, long inference times still represent a barrier to their real-world deployment. We propose a plug-and-play approach to audio reconstruction enabling a shorter duration of signal generation. We present our approach on a number of inverse problems, all evaluated on a piano sound dataset. Subjectively, the proposed strategy performs competitively with recent methods, however, this is rarely reflected
         by objective metrics.</p>
         <p class="authors"><b>Authors:</b> Michal Švento, Pavel Rajmic</p>
@@ -114,52 +130,57 @@
         <div class="center-content" id="filePath">No file selected</div>
 
         <table id="audioTable">
-            <thead>
+            <!-- <thead>
                 <tr>
                     <th>Input SNR (dB)</th>
                     <th>Noisy</th>
                     <th>Recon</th>
                 </tr>
-            </thead>
+            </thead> -->
             <tbody>
                 <tr>
-                    <th>Ground Truth</th>
-                    <td colspan="2" data-audio="audio/denoising/r1_short.wav">X</td>
+                    <th>Noiseless</th>
+                    <td colspan="2" data-audio="audio/denoising/r1_short.wav"><span class="glyphicon">&#xe072;</span></td>
+                </tr>
+                <tr>
+                    <th>Input SNR (dB)</th>
+                    <th>Noisy</th>
+                    <th>Reconstructed</th>
                 </tr>
                 <tr>
                     <th>0.01</th>
-                    <td data-audio="audio/denoising/damaged/R1_longdamaged0.01db.wav">X</td>
-                    <td data-audio="audio/denoising/recon/R1_longrecon0.01db.wav">X</td>
+                    <td data-audio="audio/denoising/damaged/R1_longdamaged0.01db.wav"><span class="glyphicon">&#xe072;</span></td>
+                    <td data-audio="audio/denoising/recon/R1_longrecon0.01db.wav"><span class="glyphicon">&#xe072;</span></td>
                 </tr>
                 <tr>
                     <th>0.1</th>
-                    <td data-audio="audio/denoising/damaged/R1_longdamaged0.1db.wav">X</td>
-                    <td data-audio="audio/denoising/recon/R1_longrecon0.1db.wav">X</td>
+                    <td data-audio="audio/denoising/damaged/R1_longdamaged0.1db.wav"><span class="glyphicon">&#xe072;</span></td>
+                    <td data-audio="audio/denoising/recon/R1_longrecon0.1db.wav"><span class="glyphicon">&#xe072;</span></td>
                 </tr>
                 <tr>
                     <th>1</th>
-                    <td data-audio="audio/denoising/damaged/R1_longdamaged01db.wav">X</td>
-                    <td data-audio="audio/denoising/recon/R1_longrecon01db.wav">X</td>
+                    <td data-audio="audio/denoising/damaged/R1_longdamaged01db.wav"><span class="glyphicon">&#xe072;</span></td>
+                    <td data-audio="audio/denoising/recon/R1_longrecon01db.wav"><span class="glyphicon">&#xe072;</span></td>
                 </tr>
                 <tr>
                     <th>3</th>
-                    <td data-audio="audio/denoising/damaged/R1_longdamaged03db.wav">X</td>
-                    <td data-audio="audio/denoising/recon/R1_longrecon03db.wav">X</td>
+                    <td data-audio="audio/denoising/damaged/R1_longdamaged03db.wav"><span class="glyphicon">&#xe072;</span></td>
+                    <td data-audio="audio/denoising/recon/R1_longrecon03db.wav"><span class="glyphicon">&#xe072;</span></td>
                 </tr>
                 <tr>
                     <th>5</th>
-                    <td data-audio="audio/denoising/damaged/R1_longdamaged05db.wav">X</td>
-                    <td data-audio="audio/denoising/recon/R1_longrecon05db.wav">X</td>
+                    <td data-audio="audio/denoising/damaged/R1_longdamaged05db.wav"><span class="glyphicon">&#xe072;</span></td>
+                    <td data-audio="audio/denoising/recon/R1_longrecon05db.wav"><span class="glyphicon">&#xe072;</span></td>
                 </tr>
                 <tr>
                     <th>7</th>
-                    <td data-audio="audio/denoising/damaged/R1_longdamaged07db.wav">X</td>
-                    <td data-audio="audio/denoising/recon/R1_longrecon07db.wav">X</td>
+                    <td data-audio="audio/denoising/damaged/R1_longdamaged07db.wav"><span class="glyphicon">&#xe072;</span></td>
+                    <td data-audio="audio/denoising/recon/R1_longrecon07db.wav"><span class="glyphicon">&#xe072;</span></td>
                 </tr>
                 <tr>
                     <th>10</th>
-                    <td data-audio="audio/denoising/damaged/R1_longdamaged10db.wav">X</td>
-                    <td data-audio="audio/denoising/recon/R1_longrecon10db.wav">X</td>
+                    <td data-audio="audio/denoising/damaged/R1_longdamaged10db.wav"><span class="glyphicon">&#xe072;</span></td>
+                    <td data-audio="audio/denoising/recon/R1_longrecon10db.wav"><span class="glyphicon">&#xe072;</span></td>
                 </tr>
             </tbody>
         </table>
@@ -167,6 +188,9 @@
     </div>
     <div class="container">
         <h1>Declipping</h1>
+
+        
+        <h2>Input SDR 1 dB</h2>
         <div class="center-content">
             <audio id="audioPlayer2" controls>
                 <source id="audioSource2" src="" type="audio/wav">
@@ -174,19 +198,17 @@
             </audio>
         </div>
         <div class="center-content" id="filePath2">No file selected</div>
-        
-        <h2>1 dB</h2>
 
         <table id="audioTable2" class="center-content">
             <thead>
                 <tr>
                     <th></th>
-                    <th>Ground Truth</th>
+                    <th>Clean</th>
                     <th>Clipped</th>
                     <th>SS-PEW</th>
                     <th>A-SPADE</th>
                     <th>S-SPADE</th>
-                    <th>CQT</th>
+                    <th>CQT-diff</th>
                     <th>PAR</th>
 
                 </tr>
@@ -194,54 +216,133 @@
             <tbody>
                 <tr>
                     <th>Sample 1</th>
-                    <td data-audio="audio/declipping/original/MIDI-Unprocessed_XP_03_R1_2004_01-02_ORIG_MID--AUDIO_03_R1_2004_01_Track01_wav.wav">X</td>
-                    <td data-audio="audio/declipping/1dB/clipped/MIDI-Unprocessed_XP_03_R1_2004_01-02_ORIG_MID--AUDIO_03_R1_2004_01_Track01_wav.wav">X</td>
-                    <td data-audio="audio/declipping/1dB/SS-PEW/MIDI-Unprocessed_XP_03_R1_2004_01-02_ORIG_MID--AUDIO_03_R1_2004_01_Track01_wav.wav">X</td>
-                    <td data-audio="audio/declipping/1dB/A-SPADE/MIDI-Unprocessed_XP_03_R1_2004_01-02_ORIG_MID--AUDIO_03_R1_2004_01_Track01_wav.wav">X</td>
-                    <td data-audio="audio/declipping/1dB/S-SPADE/MIDI-Unprocessed_XP_03_R1_2004_01-02_ORIG_MID--AUDIO_03_R1_2004_01_Track01_wav.wav">X</td>
-                    <td data-audio="audio/declipping/1dB/CQT/MIDI-Unprocessed_XP_03_R1_2004_01-02_ORIG_MID--AUDIO_03_R1_2004_01_Track01_wav.wav">X</td>
-                    <td data-audio="audio/declipping/1dB/PAR/MIDI-Unprocessed_XP_03_R1_2004_01-02_ORIG_MID--AUDIO_03_R1_2004_01_Track01_wav.wav">X</td>
+                    <td data-audio="audio/declipping/original/MIDI-Unprocessed_XP_03_R1_2004_01-02_ORIG_MID--AUDIO_03_R1_2004_01_Track01_wav.wav"><span class="glyphicon">&#xe072;</span></td>
+                    <td data-audio="audio/declipping/1dB/clipped/MIDI-Unprocessed_XP_03_R1_2004_01-02_ORIG_MID--AUDIO_03_R1_2004_01_Track01_wav.wav"><span class="glyphicon">&#xe072;</span></td>
+                    <td data-audio="audio/declipping/1dB/SS-PEW/MIDI-Unprocessed_XP_03_R1_2004_01-02_ORIG_MID--AUDIO_03_R1_2004_01_Track01_wav.wav"><span class="glyphicon">&#xe072;</span></td>
+                    <td data-audio="audio/declipping/1dB/A-SPADE/MIDI-Unprocessed_XP_03_R1_2004_01-02_ORIG_MID--AUDIO_03_R1_2004_01_Track01_wav.wav"><span class="glyphicon">&#xe072;</span></td>
+                    <td data-audio="audio/declipping/1dB/S-SPADE/MIDI-Unprocessed_XP_03_R1_2004_01-02_ORIG_MID--AUDIO_03_R1_2004_01_Track01_wav.wav"><span class="glyphicon">&#xe072;</span></td>
+                    <td data-audio="audio/declipping/1dB/CQT/MIDI-Unprocessed_XP_03_R1_2004_01-02_ORIG_MID--AUDIO_03_R1_2004_01_Track01_wav.wav"><span class="glyphicon">&#xe072;</span></td>
+                    <td data-audio="audio/declipping/1dB/PAR/MIDI-Unprocessed_XP_03_R1_2004_01-02_ORIG_MID--AUDIO_03_R1_2004_01_Track01_wav.wav"><span class="glyphicon">&#xe072;</span></td>
 
                 </tr>
                 <tr>
                     <th>Sample 2</th>
-                    <td data-audio="audio/declipping/original/MIDI-Unprocessed_15_R1_2009_01-02_ORIG_MID--AUDIO_15_R1_2009_15_R1_2009_02_WAV.wav">X</td>
-                    <td data-audio="audio/declipping/1dB/clipped/MIDI-Unprocessed_15_R1_2009_01-02_ORIG_MID--AUDIO_15_R1_2009_15_R1_2009_02_WAV.wav">X</td>
-                    <td data-audio="audio/declipping/1dB/SS-PEW/MIDI-Unprocessed_15_R1_2009_01-02_ORIG_MID--AUDIO_15_R1_2009_15_R1_2009_02_WAV.wav">X</td>
-                    <td data-audio="audio/declipping/1dB/A-SPADE/MIDI-Unprocessed_15_R1_2009_01-02_ORIG_MID--AUDIO_15_R1_2009_15_R1_2009_02_WAV.wav">X</td>
-                    <td data-audio="audio/declipping/1dB/S-SPADE/MIDI-Unprocessed_15_R1_2009_01-02_ORIG_MID--AUDIO_15_R1_2009_15_R1_2009_02_WAV.wav">X</td>
-                    <td data-audio="audio/declipping/1dB/CQT/MIDI-Unprocessed_15_R1_2009_01-02_ORIG_MID--AUDIO_15_R1_2009_15_R1_2009_02_WAV.wav">X</td>
-                    <td data-audio="audio/declipping/1dB/PAR/MIDI-Unprocessed_15_R1_2009_01-02_ORIG_MID--AUDIO_15_R1_2009_15_R1_2009_02_WAV.wav">X</td>
+                    <td data-audio="audio/declipping/original/MIDI-Unprocessed_15_R1_2009_01-02_ORIG_MID--AUDIO_15_R1_2009_15_R1_2009_02_WAV.wav"><span class="glyphicon">&#xe072;</span></td>
+                    <td data-audio="audio/declipping/1dB/clipped/MIDI-Unprocessed_15_R1_2009_01-02_ORIG_MID--AUDIO_15_R1_2009_15_R1_2009_02_WAV.wav"><span class="glyphicon">&#xe072;</span></td>
+                    <td data-audio="audio/declipping/1dB/SS-PEW/MIDI-Unprocessed_15_R1_2009_01-02_ORIG_MID--AUDIO_15_R1_2009_15_R1_2009_02_WAV.wav"><span class="glyphicon">&#xe072;</span></td>
+                    <td data-audio="audio/declipping/1dB/A-SPADE/MIDI-Unprocessed_15_R1_2009_01-02_ORIG_MID--AUDIO_15_R1_2009_15_R1_2009_02_WAV.wav"><span class="glyphicon">&#xe072;</span></td>
+                    <td data-audio="audio/declipping/1dB/S-SPADE/MIDI-Unprocessed_15_R1_2009_01-02_ORIG_MID--AUDIO_15_R1_2009_15_R1_2009_02_WAV.wav"><span class="glyphicon">&#xe072;</span></td>
+                    <td data-audio="audio/declipping/1dB/CQT/MIDI-Unprocessed_15_R1_2009_01-02_ORIG_MID--AUDIO_15_R1_2009_15_R1_2009_02_WAV.wav"><span class="glyphicon">&#xe072;</span></td>
+                    <td data-audio="audio/declipping/1dB/PAR/MIDI-Unprocessed_15_R1_2009_01-02_ORIG_MID--AUDIO_15_R1_2009_15_R1_2009_02_WAV.wav"><span class="glyphicon">&#xe072;</span></td>
                 </tr>
                 <tr>
                     <th>Sample 3</th>
-                    <td data-audio="audio/declipping/original/MIDI-Unprocessed_10_R1_2006_01-04_ORIG_MID--AUDIO_10_R1_2006_03_Track03_wav.wav">X</td>
-                    <td data-audio="audio/declipping/1dB/clipped/MIDI-Unprocessed_10_R1_2006_01-04_ORIG_MID--AUDIO_10_R1_2006_03_Track03_wav.wav">X</td>
-                    <td data-audio="audio/declipping/1dB/SS-PEW/MIDI-Unprocessed_10_R1_2006_01-04_ORIG_MID--AUDIO_10_R1_2006_03_Track03_wav.wav">X</td>
-                    <td data-audio="audio/declipping/1dB/A-SPADE/MIDI-Unprocessed_10_R1_2006_01-04_ORIG_MID--AUDIO_10_R1_2006_03_Track03_wav.wav">X</td>
-                    <td data-audio="audio/declipping/1dB/S-SPADE/MIDI-Unprocessed_10_R1_2006_01-04_ORIG_MID--AUDIO_10_R1_2006_03_Track03_wav.wav">X</td>
-                    <td data-audio="audio/declipping/1dB/CQT/MIDI-Unprocessed_10_R1_2006_01-04_ORIG_MID--AUDIO_10_R1_2006_03_Track03_wav.wav">X</td>
-                    <td data-audio="audio/declipping/1dB/PAR/MIDI-Unprocessed_10_R1_2006_01-04_ORIG_MID--AUDIO_10_R1_2006_03_Track03_wav.wav">X</td>
+                    <td data-audio="audio/declipping/original/MIDI-Unprocessed_10_R1_2006_01-04_ORIG_MID--AUDIO_10_R1_2006_03_Track03_wav.wav"><span class="glyphicon">&#xe072;</span></td>
+                    <td data-audio="audio/declipping/1dB/clipped/MIDI-Unprocessed_10_R1_2006_01-04_ORIG_MID--AUDIO_10_R1_2006_03_Track03_wav.wav"><span class="glyphicon">&#xe072;</span></td>
+                    <td data-audio="audio/declipping/1dB/SS-PEW/MIDI-Unprocessed_10_R1_2006_01-04_ORIG_MID--AUDIO_10_R1_2006_03_Track03_wav.wav"><span class="glyphicon">&#xe072;</span></td>
+                    <td data-audio="audio/declipping/1dB/A-SPADE/MIDI-Unprocessed_10_R1_2006_01-04_ORIG_MID--AUDIO_10_R1_2006_03_Track03_wav.wav"><span class="glyphicon">&#xe072;</span></td>
+                    <td data-audio="audio/declipping/1dB/S-SPADE/MIDI-Unprocessed_10_R1_2006_01-04_ORIG_MID--AUDIO_10_R1_2006_03_Track03_wav.wav"><span class="glyphicon">&#xe072;</span></td>
+                    <td data-audio="audio/declipping/1dB/CQT/MIDI-Unprocessed_10_R1_2006_01-04_ORIG_MID--AUDIO_10_R1_2006_03_Track03_wav.wav"><span class="glyphicon">&#xe072;</span></td>
+                    <td data-audio="audio/declipping/1dB/PAR/MIDI-Unprocessed_10_R1_2006_01-04_ORIG_MID--AUDIO_10_R1_2006_03_Track03_wav.wav"><span class="glyphicon">&#xe072;</span></td>
                 </tr>
                 <tr>
                     <th>Sample 4</th>
-                    <td data-audio="audio/declipping/original/MIDI-Unprocessed_04_R1_2008_01-04_ORIG_MID--AUDIO_04_R1_2008_wav--4.wav">X</td>
-                    <td data-audio="audio/declipping/1dB/clipped/MIDI-Unprocessed_04_R1_2008_01-04_ORIG_MID--AUDIO_04_R1_2008_wav--4.wav">X</td>
-                    <td data-audio="audio/declipping/1dB/SS-PEW/MIDI-Unprocessed_04_R1_2008_01-04_ORIG_MID--AUDIO_04_R1_2008_wav--4.wav">X</td>
-                    <td data-audio="audio/declipping/1dB/A-SPADE/MIDI-Unprocessed_04_R1_2008_01-04_ORIG_MID--AUDIO_04_R1_2008_wav--4.wav">X</td>
-                    <td data-audio="audio/declipping/1dB/S-SPADE/MIDI-Unprocessed_04_R1_2008_01-04_ORIG_MID--AUDIO_04_R1_2008_wav--4.wav">X</td>
-                    <td data-audio="audio/declipping/1dB/CQT/MIDI-Unprocessed_04_R1_2008_01-04_ORIG_MID--AUDIO_04_R1_2008_wav--4.wav">X</td>
-                    <td data-audio="audio/declipping/1dB/PAR/MIDI-Unprocessed_04_R1_2008_01-04_ORIG_MID--AUDIO_04_R1_2008_wav--4.wav">X</td>
+                    <td data-audio="audio/declipping/original/MIDI-Unprocessed_04_R1_2008_01-04_ORIG_MID--AUDIO_04_R1_2008_wav--4.wav"><span class="glyphicon">&#xe072;</span></td>
+                    <td data-audio="audio/declipping/1dB/clipped/MIDI-Unprocessed_04_R1_2008_01-04_ORIG_MID--AUDIO_04_R1_2008_wav--4.wav"><span class="glyphicon">&#xe072;</span></td>
+                    <td data-audio="audio/declipping/1dB/SS-PEW/MIDI-Unprocessed_04_R1_2008_01-04_ORIG_MID--AUDIO_04_R1_2008_wav--4.wav"><span class="glyphicon">&#xe072;</span></td>
+                    <td data-audio="audio/declipping/1dB/A-SPADE/MIDI-Unprocessed_04_R1_2008_01-04_ORIG_MID--AUDIO_04_R1_2008_wav--4.wav"><span class="glyphicon">&#xe072;</span></td>
+                    <td data-audio="audio/declipping/1dB/S-SPADE/MIDI-Unprocessed_04_R1_2008_01-04_ORIG_MID--AUDIO_04_R1_2008_wav--4.wav"><span class="glyphicon">&#xe072;</span></td>
+                    <td data-audio="audio/declipping/1dB/CQT/MIDI-Unprocessed_04_R1_2008_01-04_ORIG_MID--AUDIO_04_R1_2008_wav--4.wav"><span class="glyphicon">&#xe072;</span></td>
+                    <td data-audio="audio/declipping/1dB/PAR/MIDI-Unprocessed_04_R1_2008_01-04_ORIG_MID--AUDIO_04_R1_2008_wav--4.wav"><span class="glyphicon">&#xe072;</span></td>
                 </tr>
                 <tr>
                     <th>Sample 5</th>
-                    <td data-audio="audio/declipping/original/MIDI-Unprocessed_03_R1_2006_01-05_ORIG_MID--AUDIO_03_R1_2006_04_Track04_wav.wav">X</td>
-                    <td data-audio="audio/declipping/1dB/clipped/MIDI-Unprocessed_03_R1_2006_01-05_ORIG_MID--AUDIO_03_R1_2006_04_Track04_wav.wav">X</td>
-                    <td data-audio="audio/declipping/1dB/SS-PEW/MIDI-Unprocessed_03_R1_2006_01-05_ORIG_MID--AUDIO_03_R1_2006_04_Track04_wav.wav">X</td>
-                    <td data-audio="audio/declipping/1dB/A-SPADE/MIDI-Unprocessed_03_R1_2006_01-05_ORIG_MID--AUDIO_03_R1_2006_04_Track04_wav.wav">X</td>
-                    <td data-audio="audio/declipping/1dB/S-SPADE/MIDI-Unprocessed_03_R1_2006_01-05_ORIG_MID--AUDIO_03_R1_2006_04_Track04_wav.wav">X</td>
-                    <td data-audio="audio/declipping/1dB/CQT/MIDI-Unprocessed_03_R1_2006_01-05_ORIG_MID--AUDIO_03_R1_2006_04_Track04_wav.wav">X</td>
-                    <td data-audio="audio/declipping/1dB/PAR/MIDI-Unprocessed_03_R1_2006_01-05_ORIG_MID--AUDIO_03_R1_2006_04_Track04_wav.wav">X</td>
+                    <td data-audio="audio/declipping/original/MIDI-Unprocessed_03_R1_2006_01-05_ORIG_MID--AUDIO_03_R1_2006_04_Track04_wav.wav"><span class="glyphicon">&#xe072;</span></td>
+                    <td data-audio="audio/declipping/1dB/clipped/MIDI-Unprocessed_03_R1_2006_01-05_ORIG_MID--AUDIO_03_R1_2006_04_Track04_wav.wav"><span class="glyphicon">&#xe072;</span></td>
+                    <td data-audio="audio/declipping/1dB/SS-PEW/MIDI-Unprocessed_03_R1_2006_01-05_ORIG_MID--AUDIO_03_R1_2006_04_Track04_wav.wav"><span class="glyphicon">&#xe072;</span></td>
+                    <td data-audio="audio/declipping/1dB/A-SPADE/MIDI-Unprocessed_03_R1_2006_01-05_ORIG_MID--AUDIO_03_R1_2006_04_Track04_wav.wav"><span class="glyphicon">&#xe072;</span></td>
+                    <td data-audio="audio/declipping/1dB/S-SPADE/MIDI-Unprocessed_03_R1_2006_01-05_ORIG_MID--AUDIO_03_R1_2006_04_Track04_wav.wav"><span class="glyphicon">&#xe072;</span></td>
+                    <td data-audio="audio/declipping/1dB/CQT/MIDI-Unprocessed_03_R1_2006_01-05_ORIG_MID--AUDIO_03_R1_2006_04_Track04_wav.wav"><span class="glyphicon">&#xe072;</span></td>
+                    <td data-audio="audio/declipping/1dB/PAR/MIDI-Unprocessed_03_R1_2006_01-05_ORIG_MID--AUDIO_03_R1_2006_04_Track04_wav.wav"><span class="glyphicon">&#xe072;</span></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Input SDR 10 dB</h2>
+        
+        <div class="center-content">
+            <audio id="audioPlayer3" controls>
+                <source id="audioSource3" src="" type="audio/wav">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+        <div class="center-content" id="filePath3">No file selected</div>
+
+        <table id="audioTable3" class="center-content">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Clean</th>
+                    <th>Clipped</th>
+                    <th>SS-PEW</th>
+                    <th>A-SPADE</th>
+                    <th>S-SPADE</th>
+                    <th>CQT-diff</th>
+                    <th>PAR</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>Sample 1</th>
+                    <td data-audio="audio/declipping/original/MIDI-Unprocessed_XP_03_R1_2004_01-02_ORIG_MID--AUDIO_03_R1_2004_01_Track01_wav.wav"><span class="glyphicon">&#xe072;</span></td>
+                    <td data-audio="audio/declipping/10dB/clipped/MIDI-Unprocessed_XP_03_R1_2004_01-02_ORIG_MID--AUDIO_03_R1_2004_01_Track01_wav.wav"><span class="glyphicon">&#xe072;</span></td>
+                    <td data-audio="audio/declipping/10dB/SS-PEW/MIDI-Unprocessed_XP_03_R1_2004_01-02_ORIG_MID--AUDIO_03_R1_2004_01_Track01_wav.wav"><span class="glyphicon">&#xe072;</span></td>
+                    <td data-audio="audio/declipping/10dB/A-SPADE/MIDI-Unprocessed_XP_03_R1_2004_01-02_ORIG_MID--AUDIO_03_R1_2004_01_Track01_wav.wav"><span class="glyphicon">&#xe072;</span></td>
+                    <td data-audio="audio/declipping/10dB/S-SPADE/MIDI-Unprocessed_XP_03_R1_2004_01-02_ORIG_MID--AUDIO_03_R1_2004_01_Track01_wav.wav"><span class="glyphicon">&#xe072;</span></td>
+                    <td data-audio="audio/declipping/10dB/CQT/MIDI-Unprocessed_XP_03_R1_2004_01-02_ORIG_MID--AUDIO_03_R1_2004_01_Track01_wav.wav"><span class="glyphicon">&#xe072;</span></td>
+                    <td data-audio="audio/declipping/10dB/PAR/MIDI-Unprocessed_XP_03_R1_2004_01-02_ORIG_MID--AUDIO_03_R1_2004_01_Track01_wav.wav"><span class="glyphicon">&#xe072;</span></td>
+
+                </tr>
+                <tr>
+                    <th>Sample 2</th>
+                    <td data-audio="audio/declipping/original/MIDI-Unprocessed_15_R1_2009_01-02_ORIG_MID--AUDIO_15_R1_2009_15_R1_2009_02_WAV.wav"><span class="glyphicon">&#xe072;</span></td>
+                    <td data-audio="audio/declipping/10dB/clipped/MIDI-Unprocessed_15_R1_2009_01-02_ORIG_MID--AUDIO_15_R1_2009_15_R1_2009_02_WAV.wav"><span class="glyphicon">&#xe072;</span></td>
+                    <td data-audio="audio/declipping/10dB/SS-PEW/MIDI-Unprocessed_15_R1_2009_01-02_ORIG_MID--AUDIO_15_R1_2009_15_R1_2009_02_WAV.wav"><span class="glyphicon">&#xe072;</span></td>
+                    <td data-audio="audio/declipping/10dB/A-SPADE/MIDI-Unprocessed_15_R1_2009_01-02_ORIG_MID--AUDIO_15_R1_2009_15_R1_2009_02_WAV.wav"><span class="glyphicon">&#xe072;</span></td>
+                    <td data-audio="audio/declipping/10dB/S-SPADE/MIDI-Unprocessed_15_R1_2009_01-02_ORIG_MID--AUDIO_15_R1_2009_15_R1_2009_02_WAV.wav"><span class="glyphicon">&#xe072;</span></td>
+                    <td data-audio="audio/declipping/10dB/CQT/MIDI-Unprocessed_15_R1_2009_01-02_ORIG_MID--AUDIO_15_R1_2009_15_R1_2009_02_WAV.wav"><span class="glyphicon">&#xe072;</span></td>
+                    <td data-audio="audio/declipping/10dB/PAR/MIDI-Unprocessed_15_R1_2009_01-02_ORIG_MID--AUDIO_15_R1_2009_15_R1_2009_02_WAV.wav"><span class="glyphicon">&#xe072;</span></td>
+                </tr>
+                <tr>
+                    <th>Sample 3</th>
+                    <td data-audio="audio/declipping/original/MIDI-Unprocessed_10_R1_2006_01-04_ORIG_MID--AUDIO_10_R1_2006_03_Track03_wav.wav"><span class="glyphicon">&#xe072;</span></td>
+                    <td data-audio="audio/declipping/10dB/clipped/MIDI-Unprocessed_10_R1_2006_01-04_ORIG_MID--AUDIO_10_R1_2006_03_Track03_wav.wav"><span class="glyphicon">&#xe072;</span></td>
+                    <td data-audio="audio/declipping/10dB/SS-PEW/MIDI-Unprocessed_10_R1_2006_01-04_ORIG_MID--AUDIO_10_R1_2006_03_Track03_wav.wav"><span class="glyphicon">&#xe072;</span></td>
+                    <td data-audio="audio/declipping/10dB/A-SPADE/MIDI-Unprocessed_10_R1_2006_01-04_ORIG_MID--AUDIO_10_R1_2006_03_Track03_wav.wav"><span class="glyphicon">&#xe072;</span></td>
+                    <td data-audio="audio/declipping/10dB/S-SPADE/MIDI-Unprocessed_10_R1_2006_01-04_ORIG_MID--AUDIO_10_R1_2006_03_Track03_wav.wav"><span class="glyphicon">&#xe072;</span></td>
+                    <td data-audio="audio/declipping/10dB/CQT/MIDI-Unprocessed_10_R1_2006_01-04_ORIG_MID--AUDIO_10_R1_2006_03_Track03_wav.wav"><span class="glyphicon">&#xe072;</span></td>
+                    <td data-audio="audio/declipping/10dB/PAR/MIDI-Unprocessed_10_R1_2006_01-04_ORIG_MID--AUDIO_10_R1_2006_03_Track03_wav.wav"><span class="glyphicon">&#xe072;</span></td>
+                </tr>
+                <tr>
+                    <th>Sample 4</th>
+                    <td data-audio="audio/declipping/original/MIDI-Unprocessed_04_R1_2008_01-04_ORIG_MID--AUDIO_04_R1_2008_wav--4.wav"><span class="glyphicon">&#xe072;</span></td>
+                    <td data-audio="audio/declipping/10dB/clipped/MIDI-Unprocessed_04_R1_2008_01-04_ORIG_MID--AUDIO_04_R1_2008_wav--4.wav"><span class="glyphicon">&#xe072;</span></td>
+                    <td data-audio="audio/declipping/10dB/SS-PEW/MIDI-Unprocessed_04_R1_2008_01-04_ORIG_MID--AUDIO_04_R1_2008_wav--4.wav"><span class="glyphicon">&#xe072;</span></td>
+                    <td data-audio="audio/declipping/10dB/A-SPADE/MIDI-Unprocessed_04_R1_2008_01-04_ORIG_MID--AUDIO_04_R1_2008_wav--4.wav"><span class="glyphicon">&#xe072;</span></td>
+                    <td data-audio="audio/declipping/10dB/S-SPADE/MIDI-Unprocessed_04_R1_2008_01-04_ORIG_MID--AUDIO_04_R1_2008_wav--4.wav"><span class="glyphicon">&#xe072;</span></td>
+                    <td data-audio="audio/declipping/10dB/CQT/MIDI-Unprocessed_04_R1_2008_01-04_ORIG_MID--AUDIO_04_R1_2008_wav--4.wav"><span class="glyphicon">&#xe072;</span></td>
+                    <td data-audio="audio/declipping/10dB/PAR/MIDI-Unprocessed_04_R1_2008_01-04_ORIG_MID--AUDIO_04_R1_2008_wav--4.wav"><span class="glyphicon">&#xe072;</span></td>
+                </tr>
+                <tr>
+                    <th>Sample 5</th>
+                    <td data-audio="audio/declipping/original/MIDI-Unprocessed_03_R1_2006_01-05_ORIG_MID--AUDIO_03_R1_2006_04_Track04_wav.wav"><span class="glyphicon">&#xe072;</span></td>
+                    <td data-audio="audio/declipping/10dB/clipped/MIDI-Unprocessed_03_R1_2006_01-05_ORIG_MID--AUDIO_03_R1_2006_04_Track04_wav.wav"><span class="glyphicon">&#xe072;</span></td>
+                    <td data-audio="audio/declipping/10dB/SS-PEW/MIDI-Unprocessed_03_R1_2006_01-05_ORIG_MID--AUDIO_03_R1_2006_04_Track04_wav.wav"><span class="glyphicon">&#xe072;</span></td>
+                    <td data-audio="audio/declipping/10dB/A-SPADE/MIDI-Unprocessed_03_R1_2006_01-05_ORIG_MID--AUDIO_03_R1_2006_04_Track04_wav.wav"><span class="glyphicon">&#xe072;</span></td>
+                    <td data-audio="audio/declipping/10dB/S-SPADE/MIDI-Unprocessed_03_R1_2006_01-05_ORIG_MID--AUDIO_03_R1_2006_04_Track04_wav.wav"><span class="glyphicon">&#xe072;</span></td>
+                    <td data-audio="audio/declipping/10dB/CQT/MIDI-Unprocessed_03_R1_2006_01-05_ORIG_MID--AUDIO_03_R1_2006_04_Track04_wav.wav"><span class="glyphicon">&#xe072;</span></td>
+                    <td data-audio="audio/declipping/10dB/PAR/MIDI-Unprocessed_03_R1_2006_01-05_ORIG_MID--AUDIO_03_R1_2006_04_Track04_wav.wav"><span class="glyphicon">&#xe072;</span></td>
                 </tr>
             </tbody>
         </table>
@@ -251,51 +352,163 @@
     <div class="container">
         <h1>Compressive sensing</h1>
         <div class="center-content">
-            <audio id="audioPlayer3" controls>
-                <source id="audioSource3" src="" type="audio/wav">
+            <audio id="audioPlayer4" controls>
+                <source id="audioSource4" src="" type="audio/wav">
                 Your browser does not support the audio element.
             </audio>
         </div>
-        <div class="center-content" id="filePath3">No file selected</div>
+        <div class="center-content" id="filePath4">No file selected</div>
         
-            <table id="audioTable3" class="center-content">
+        <table id="audioTable4" class="center-content">
+            <thead>
+                <tr>
+                    <th>Sample 1</th>
+                    <th style="width: 120px;">CS</th>
+                    <th>50%</th>
+                    <th>60%</th>
+                    <th>70%</th>
+                    <th>80%</th>
+                    <th>90%</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    
+                    <td rowspan="2" data-audio="audio/cs/MIDI-Unprocessed_Chamber5_MID--AUDIO_18_R3_2018_wav--1.wav"><span class="glyphicon">&#xe072;</span></td>
+                    <th>Damaged</th>
+                    <td data-audio="audio/cs/MIDI-Unprocessed_Chamber5_MID--AUDIO_18_R3_2018_wav--1damagedmissing50perc.wav"><span class="glyphicon">&#xe072;</span></td>
+                    <td data-audio="audio/cs/MIDI-Unprocessed_Chamber5_MID--AUDIO_18_R3_2018_wav--1damagedmissing60perc.wav"><span class="glyphicon">&#xe072;</span></td>
+                    <td data-audio="audio/cs/MIDI-Unprocessed_Chamber5_MID--AUDIO_18_R3_2018_wav--1damagedmissing70perc.wav"><span class="glyphicon">&#xe072;</span></td>
+                    <td data-audio="audio/cs/MIDI-Unprocessed_Chamber5_MID--AUDIO_18_R3_2018_wav--1damagedmissing80perc.wav"><span class="glyphicon">&#xe072;</span></td>
+                    <td data-audio="audio/cs/MIDI-Unprocessed_Chamber5_MID--AUDIO_18_R3_2018_wav--1damagedmissing90perc.wav"><span class="glyphicon">&#xe072;</span></td>
+                </tr>
+                <tr>
+                    <th>Reconstructed</th>
+                    <td data-audio="audio/cs/MIDI-Unprocessed_Chamber5_MID--AUDIO_18_R3_2018_wav--1reconmissing50perc.wav"><span class="glyphicon">&#xe072;</span></td>
+                    <td data-audio="audio/cs/MIDI-Unprocessed_Chamber5_MID--AUDIO_18_R3_2018_wav--1reconmissing60perc.wav"><span class="glyphicon">&#xe072;</span></td>
+                    <td data-audio="audio/cs/MIDI-Unprocessed_Chamber5_MID--AUDIO_18_R3_2018_wav--1reconmissing70perc.wav"><span class="glyphicon">&#xe072;</span></td>
+                    <td data-audio="audio/cs/MIDI-Unprocessed_Chamber5_MID--AUDIO_18_R3_2018_wav--1reconmissing80perc.wav"><span class="glyphicon">&#xe072;</span></td>
+                    <td data-audio="audio/cs/MIDI-Unprocessed_Chamber5_MID--AUDIO_18_R3_2018_wav--1reconmissing90perc.wav"><span class="glyphicon">&#xe072;</span></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table id="audioTable42" class="center-content">
+            <thead>
+                <tr>
+                    <th>Sample 2</th>
+                    <th style="width: 120px;">CS</th>
+                    <th>50%</th>
+                    <th>60%</th>
+                    <th>70%</th>
+                    <th>80%</th>
+                    <th>90%</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    
+                    <td rowspan="2" data-audio="audio/cs/MIDI-Unprocessed_Chamber5_MID--AUDIO_18_R3_2018_wav--1.wav"><span class="glyphicon">&#xe072;</span></td>
+                    <th>Damaged</th>
+                    <td data-audio="audio/cs/MIDI-Unprocessed_Chamber5_MID--AUDIO_18_R3_2018_wav--1damagedmissing50perc.wav"><span class="glyphicon">&#xe072;</span></td>
+                    <td data-audio="audio/cs/MIDI-Unprocessed_Chamber5_MID--AUDIO_18_R3_2018_wav--1damagedmissing60perc.wav"><span class="glyphicon">&#xe072;</span></td>
+                    <td data-audio="audio/cs/MIDI-Unprocessed_Chamber5_MID--AUDIO_18_R3_2018_wav--1damagedmissing70perc.wav"><span class="glyphicon">&#xe072;</span></td>
+                    <td data-audio="audio/cs/MIDI-Unprocessed_Chamber5_MID--AUDIO_18_R3_2018_wav--1damagedmissing80perc.wav"><span class="glyphicon">&#xe072;</span></td>
+                    <td data-audio="audio/cs/MIDI-Unprocessed_Chamber5_MID--AUDIO_18_R3_2018_wav--1damagedmissing90perc.wav"><span class="glyphicon">&#xe072;</span></td>
+                </tr>
+                <tr>
+                    <th>Reconstructed</th>
+                    <td data-audio="audio/cs/MIDI-Unprocessed_Chamber5_MID--AUDIO_18_R3_2018_wav--1reconmissing50perc.wav"><span class="glyphicon">&#xe072;</span></td>
+                    <td data-audio="audio/cs/MIDI-Unprocessed_Chamber5_MID--AUDIO_18_R3_2018_wav--1reconmissing60perc.wav"><span class="glyphicon">&#xe072;</span></td>
+                    <td data-audio="audio/cs/MIDI-Unprocessed_Chamber5_MID--AUDIO_18_R3_2018_wav--1reconmissing70perc.wav"><span class="glyphicon">&#xe072;</span></td>
+                    <td data-audio="audio/cs/MIDI-Unprocessed_Chamber5_MID--AUDIO_18_R3_2018_wav--1reconmissing80perc.wav"><span class="glyphicon">&#xe072;</span></td>
+                    <td data-audio="audio/cs/MIDI-Unprocessed_Chamber5_MID--AUDIO_18_R3_2018_wav--1reconmissing90perc.wav"><span class="glyphicon">&#xe072;</span></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table id="audioTable43" class="center-content">
+            <thead>
+                <tr>
+                    <th>Sample 3</th>
+                    <th style="width: 120px;">CS</th>
+                    <th>50%</th>
+                    <th>60%</th>
+                    <th>70%</th>
+                    <th>80%</th>
+                    <th>90%</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    
+                    <td rowspan="2" data-audio="audio/cs/MIDI-Unprocessed_Chamber5_MID--AUDIO_18_R3_2018_wav--1.wav"><span class="glyphicon">&#xe072;</span></td>
+                    <th>Damaged</th>
+                    <td data-audio="audio/cs/MIDI-Unprocessed_Chamber5_MID--AUDIO_18_R3_2018_wav--1damagedmissing50perc.wav"><span class="glyphicon">&#xe072;</span></td>
+                    <td data-audio="audio/cs/MIDI-Unprocessed_Chamber5_MID--AUDIO_18_R3_2018_wav--1damagedmissing60perc.wav"><span class="glyphicon">&#xe072;</span></td>
+                    <td data-audio="audio/cs/MIDI-Unprocessed_Chamber5_MID--AUDIO_18_R3_2018_wav--1damagedmissing70perc.wav"><span class="glyphicon">&#xe072;</span></td>
+                    <td data-audio="audio/cs/MIDI-Unprocessed_Chamber5_MID--AUDIO_18_R3_2018_wav--1damagedmissing80perc.wav"><span class="glyphicon">&#xe072;</span></td>
+                    <td data-audio="audio/cs/MIDI-Unprocessed_Chamber5_MID--AUDIO_18_R3_2018_wav--1damagedmissing90perc.wav"><span class="glyphicon">&#xe072;</span></td>
+                </tr>
+                <tr>
+                    <th>Reconstructed</th>
+                    <td data-audio="audio/cs/MIDI-Unprocessed_Chamber5_MID--AUDIO_18_R3_2018_wav--1reconmissing50perc.wav"><span class="glyphicon">&#xe072;</span></td>
+                    <td data-audio="audio/cs/MIDI-Unprocessed_Chamber5_MID--AUDIO_18_R3_2018_wav--1reconmissing60perc.wav"><span class="glyphicon">&#xe072;</span></td>
+                    <td data-audio="audio/cs/MIDI-Unprocessed_Chamber5_MID--AUDIO_18_R3_2018_wav--1reconmissing70perc.wav"><span class="glyphicon">&#xe072;</span></td>
+                    <td data-audio="audio/cs/MIDI-Unprocessed_Chamber5_MID--AUDIO_18_R3_2018_wav--1reconmissing80perc.wav"><span class="glyphicon">&#xe072;</span></td>
+                    <td data-audio="audio/cs/MIDI-Unprocessed_Chamber5_MID--AUDIO_18_R3_2018_wav--1reconmissing90perc.wav"><span class="glyphicon">&#xe072;</span></td>
+                </tr>
+            </tbody>
+        </table>
+
+            
+    </div>
+
+    <div class="container">
+        <h1>Vocoder & Separator</h1>
+        <div class="center-content">
+            <audio id="audioPlayer5" controls>
+                <source id="audioSource5" src="" type="audio/wav">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+        <div class="center-content" id="filePath5">No file selected</div>
+        
+            <table id="audioTable5" class="center-content">
                 <thead>
                     <tr>
+                        <th>Instrument</th>
                         <th>Clean</th>
-                        <th>CS</th>
-                        <th>50%</th>
-                        <th>60%</th>
-                        <th>70%</th>
-                        <th>80%</th>
-                        <th>90%</th>
+                        <th>Noisy</th>
+                        <th>Reconstructed</th>
 
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        
-                        <td rowspan="2" data-audio="audio/cs/MIDI-Unprocessed_Chamber5_MID--AUDIO_18_R3_2018_wav--1.wav">X</td>
-                        <th>Damaged</th>
-                        <td data-audio="audio/cs/MIDI-Unprocessed_Chamber5_MID--AUDIO_18_R3_2018_wav--1damagedmissing50perc.wav">X</td>
-                        <td data-audio="audio/cs/MIDI-Unprocessed_Chamber5_MID--AUDIO_18_R3_2018_wav--1damagedmissing60perc.wav">X</td>
-                        <td data-audio="audio/cs/MIDI-Unprocessed_Chamber5_MID--AUDIO_18_R3_2018_wav--1damagedmissing70perc.wav">X</td>
-                        <td data-audio="audio/cs/MIDI-Unprocessed_Chamber5_MID--AUDIO_18_R3_2018_wav--1damagedmissing80perc.wav">X</td>
-                        <td data-audio="audio/cs/MIDI-Unprocessed_Chamber5_MID--AUDIO_18_R3_2018_wav--1damagedmissing90perc.wav">X</td>
+                        <th>Vln+Pno</th>
+                        <td data-audio="audio/vocoder/original_vln_pno.wav"><span class="glyphicon">&#xe072;</span></td>
+                        <td data-audio="audio/vocoder/damaged_vln_pno.wav"><span class="glyphicon">&#xe072;</span></td>
+                        <td data-audio="audio/vocoder/recon_vln_pno.wav"><span class="glyphicon">&#xe072;</span></td>
                     </tr>
                     <tr>
-                        <th>Repaired</th>
-                        <td data-audio="audio/cs/MIDI-Unprocessed_Chamber5_MID--AUDIO_18_R3_2018_wav--1reconmissing50perc.wav">X</td>
-                        <td data-audio="audio/cs/MIDI-Unprocessed_Chamber5_MID--AUDIO_18_R3_2018_wav--1reconmissing60perc.wav">X</td>
-                        <td data-audio="audio/cs/MIDI-Unprocessed_Chamber5_MID--AUDIO_18_R3_2018_wav--1reconmissing70perc.wav">X</td>
-                        <td data-audio="audio/cs/MIDI-Unprocessed_Chamber5_MID--AUDIO_18_R3_2018_wav--1reconmissing80perc.wav">X</td>
-                        <td data-audio="audio/cs/MIDI-Unprocessed_Chamber5_MID--AUDIO_18_R3_2018_wav--1reconmissing90perc.wav">X</td>
+                        <th>Accordion</th>
+                        <td data-audio="audio/vocoder/original_accordion.wav"><span class="glyphicon">&#xe072;</span></td>
+                        <td data-audio="audio/vocoder/damaged_accordion.wav"><span class="glyphicon">&#xe072;</span></td>
+                        <td data-audio="audio/vocoder/recon_accordion.wav"><span class="glyphicon">&#xe072;</span></td>
+                    </tr>
+                    <tr>
+                        <th>Violin</th>
+                        <td data-audio="audio/vocoder/original_violin.wav"><span class="glyphicon">&#xe072;</span></td>
+                        <td data-audio="audio/vocoder/damaged_violin.wav"><span class="glyphicon">&#xe072;</span></td>
+                        <td data-audio="audio/vocoder/recon_violin.wav"><span class="glyphicon">&#xe072;</span></td>
                     </tr>
                 </tbody>
             </table>
     </div>
-
-
-
     
     <div class="center-content" margin="20px">
         <p>If you have questions, feel free to contact me on mail <a href="mailto:michal.svento@vut.cz">michal.svento@vut.cz</a> </p>
@@ -303,54 +516,34 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const table = document.getElementById('audioTable');
-            const audioPlayer = document.getElementById('audioPlayer');
-            const audioSource = document.getElementById('audioSource');
-            const filePath = document.getElementById('filePath');
-
-            table.addEventListener('click', function(event) {
-                const target = event.target;
-                const cell = target.closest('td');
-                if (cell && cell.dataset.audio) {
-                    audioSource.src = cell.dataset.audio;
-                    audioPlayer.load();
-                    audioPlayer.play();
-                    filePath.textContent = `Currently playing: ${cell.dataset.audio}`;
-                }
-            });
-
-            const table2 = document.getElementById('audioTable2');
-            const audioPlayer2 = document.getElementById('audioPlayer2');
-            const audioSource2 = document.getElementById('audioSource2');
-            const filePath2 = document.getElementById('filePath2');
-
-            table2.addEventListener('click', function(event) {
-                const target = event.target;
-                const cell = target.closest('td');
-                if (cell && cell.dataset.audio) {
-                    audioSource2.src = cell.dataset.audio;
-                    audioPlayer2.load();
-                    audioPlayer2.play();
-                    filePath2.textContent = `Currently playing: ${cell.dataset.audio}`;
-                }
-            });
-
-            const table3 = document.getElementById('audioTable3');
-            const audioPlayer3 = document.getElementById('audioPlayer3');
-            const audioSource3 = document.getElementById('audioSource3');
-            const filePath3 = document.getElementById('filePath3');
-
-            table3.addEventListener('click', function(event) {
-                const target = event.target;
-                const cell = target.closest('td');
-                if (cell && cell.dataset.audio) {
-                    audioSource3.src = cell.dataset.audio;
-                    audioPlayer3.load();
-                    audioPlayer3.play();
-                    filePath3.textContent = `Currently playing: ${cell.dataset.audio}`;
-                }
-            });
+            experimentAudio("audioTable", "audioPlayer", "audioSource", "filePath")
+            experimentAudio("audioTable2", "audioPlayer2", "audioSource2", "filePath2")
+            experimentAudio("audioTable3", "audioPlayer3", "audioSource3", "filePath3")
+            experimentAudio("audioTable4", "audioPlayer4", "audioSource4", "filePath4")
+            experimentAudio("audioTable42", "audioPlayer4", "audioSource4", "filePath4")
+            experimentAudio("audioTable43", "audioPlayer4", "audioSource4", "filePath4")
+            experimentAudio("audioTable5", "audioPlayer5", "audioSource5", "filePath5")
         });
+
+        function experimentAudio(tableId, playerId, sourceId, pathId){
+            const table = document.getElementById(tableId);
+                const audioPlayer = document.getElementById(playerId);
+                const audioSource = document.getElementById(sourceId);
+                const filePath = document.getElementById(pathId);
+
+                table.addEventListener('click', function(event) {
+                    const target = event.target;
+                    const cell = target.closest('td');
+                    if (cell && cell.dataset.audio) {
+                        audioSource.src = cell.dataset.audio;
+                        audioPlayer.load();
+                        audioPlayer.play();
+                        filePath.textContent = `Currently playing: ${cell.dataset.audio}`;
+                    }
+            });
+        }
+
+
     </script>
 </body>
 </html>
