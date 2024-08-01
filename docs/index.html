@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.3/font/bootstrap-icons.min.css">
     <title>PAR - Denoising</title>
     <style>
         body {
@@ -56,6 +57,34 @@
             font-style: oblique;
             font-size: large;
         }
+
+        .a1 {
+            display: flex;
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+            text-decoration: none;
+            color: #000;
+            font-size: 16px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 200px; /* Adjust width as needed */
+            margin: auto; /* Center the block if needed */
+            transition: color 0.3s, border-color 0.3s; /* Smooth transition for color change */
+        }
+        .a1:hover {
+            color: #F40F02; /* Change text color on hover */
+            border-color: #F40F02; /* Change border color on hover */
+            background-color: #f5f5f5;
+        }
+        .pdf-icon {
+            margin-right: 8px; /* Adjust space between icon and text */
+            transition: color 0.3s; /* Smooth transition for color change */
+        }
+        .a1:hover .pdf-icon {
+            color: #F40F02; /* Change icon color on hover */
+        }
+    
         #filePath {
             margin-top: 10px;
             font-size: 1.0em;
@@ -85,6 +114,8 @@
         }
 
 
+
+
         .container {
             margin: 10px;
             padding: 10px;
@@ -98,6 +129,8 @@
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
+
+
 
         .center-content {
             text-align: center;
@@ -118,6 +151,9 @@
         <p>There have been a plethora of methods developed to tackle diverse audio reconstruction problems. Recently, deep generative models have affected this field strongly, some of them allowing to solve multiple problems with only a minimal need for adaptation. However, long inference times still represent a barrier to their real-world deployment. We propose a plug-and-play approach to audio reconstruction enabling a shorter duration of signal generation. We present our approach on a number of inverse problems, all evaluated on a piano sound dataset. Subjectively, the proposed strategy performs competitively with recent methods, however, this is rarely reflected
         by objective metrics.</p>
         <p class="authors"><b>Authors:</b> Michal Švento, Pavel Rajmic</p>
+        <a href="IWAENC_2024-final.pdf" class="a1">
+            <i class="bi bi-file-pdf"></i> Paper
+        </a>
     </div>
     <div class="container">
         <h1>Denoising</h1>
@@ -140,7 +176,7 @@
             <tbody>
                 <tr>
                     <th>Noiseless</th>
-                    <td colspan="2" data-audio="audio/denoising/r1_short.wav"><span class="glyphicon">&#xe072;</span></td>
+                    <td colspan="2" data-audio="audio/denoising/r1_short.wav"><i class="bi bi-play-fill"></i></td>
                 </tr>
                 <tr>
                     <th>Input SNR (dB)</th>
@@ -148,39 +184,59 @@
                     <th>Reconstructed</th>
                 </tr>
                 <tr>
-                    <th>0.01</th>
-                    <td data-audio="audio/denoising/damaged/R1_longdamaged0.01db.wav"><span class="glyphicon">&#xe072;</span></td>
-                    <td data-audio="audio/denoising/recon/R1_longrecon0.01db.wav"><span class="glyphicon">&#xe072;</span></td>
+                    <th>-20</th>
+                    <td data-audio="audio/denoising/damaged/R1_longdamaged-20db.wav"><i class="bi bi-play-fill"></i></td>
+                    <td data-audio="audio/denoising/recon/R1_longrecon-20db.wav"><i class="bi bi-play-fill"></i></td>
                 </tr>
                 <tr>
-                    <th>0.1</th>
-                    <td data-audio="audio/denoising/damaged/R1_longdamaged0.1db.wav"><span class="glyphicon">&#xe072;</span></td>
-                    <td data-audio="audio/denoising/recon/R1_longrecon0.1db.wav"><span class="glyphicon">&#xe072;</span></td>
+                    <th>-10</th>
+                    <td data-audio="audio/denoising/damaged/R1_longdamaged-10db.wav"><i class="bi bi-play-fill"></i></td>
+                    <td data-audio="audio/denoising/recon/R1_longrecon-10db.wav"><i class="bi bi-play-fill"></i></td>
+                </tr>
+                <tr>
+                    <th>-5</th>
+                    <td data-audio="audio/denoising/damaged/R1_longdamaged-5db.wav"><i class="bi bi-play-fill"></i></td>
+                    <td data-audio="audio/denoising/recon/R1_longrecon-5db.wav"><i class="bi bi-play-fill"></i></td>
+                </tr>
+                <tr>
+                    <th>0</th>
+                    <td data-audio="audio/denoising/damaged/R1_longdamaged00db.wav"><i class="bi bi-play-fill"></i></td>
+                    <td data-audio="audio/denoising/recon/R1_longrecon00db.wav"><i class="bi bi-play-fill"></i></td>
                 </tr>
                 <tr>
                     <th>1</th>
-                    <td data-audio="audio/denoising/damaged/R1_longdamaged01db.wav"><span class="glyphicon">&#xe072;</span></td>
-                    <td data-audio="audio/denoising/recon/R1_longrecon01db.wav"><span class="glyphicon">&#xe072;</span></td>
+                    <td data-audio="audio/denoising/damaged/R1_longdamaged01db.wav"><i class="bi bi-play-fill"></i></td>
+                    <td data-audio="audio/denoising/recon/R1_longrecon01db.wav"><i class="bi bi-play-fill"></i></td>
                 </tr>
                 <tr>
                     <th>3</th>
-                    <td data-audio="audio/denoising/damaged/R1_longdamaged03db.wav"><span class="glyphicon">&#xe072;</span></td>
-                    <td data-audio="audio/denoising/recon/R1_longrecon03db.wav"><span class="glyphicon">&#xe072;</span></td>
+                    <td data-audio="audio/denoising/damaged/R1_longdamaged03db.wav"><i class="bi bi-play-fill"></i></td>
+                    <td data-audio="audio/denoising/recon/R1_longrecon03db.wav"><i class="bi bi-play-fill"></i></td>
                 </tr>
                 <tr>
                     <th>5</th>
-                    <td data-audio="audio/denoising/damaged/R1_longdamaged05db.wav"><span class="glyphicon">&#xe072;</span></td>
-                    <td data-audio="audio/denoising/recon/R1_longrecon05db.wav"><span class="glyphicon">&#xe072;</span></td>
+                    <td data-audio="audio/denoising/damaged/R1_longdamaged05db.wav"><i class="bi bi-play-fill"></i></td>
+                    <td data-audio="audio/denoising/recon/R1_longrecon05db.wav"><i class="bi bi-play-fill"></i></td>
                 </tr>
                 <tr>
                     <th>7</th>
-                    <td data-audio="audio/denoising/damaged/R1_longdamaged07db.wav"><span class="glyphicon">&#xe072;</span></td>
-                    <td data-audio="audio/denoising/recon/R1_longrecon07db.wav"><span class="glyphicon">&#xe072;</span></td>
+                    <td data-audio="audio/denoising/damaged/R1_longdamaged07db.wav"><i class="bi bi-play-fill"></i></td>
+                    <td data-audio="audio/denoising/recon/R1_longrecon07db.wav"><i class="bi bi-play-fill"></i></td>
                 </tr>
                 <tr>
                     <th>10</th>
-                    <td data-audio="audio/denoising/damaged/R1_longdamaged10db.wav"><span class="glyphicon">&#xe072;</span></td>
-                    <td data-audio="audio/denoising/recon/R1_longrecon10db.wav"><span class="glyphicon">&#xe072;</span></td>
+                    <td data-audio="audio/denoising/damaged/R1_longdamaged10db.wav"><i class="bi bi-play-fill"></i></td>
+                    <td data-audio="audio/denoising/recon/R1_longrecon10db.wav"><i class="bi bi-play-fill"></i></td>
+                </tr>
+                <tr>
+                    <th>15</th>
+                    <td data-audio="audio/denoising/damaged/R1_longdamaged15db.wav"><i class="bi bi-play-fill"></i></td>
+                    <td data-audio="audio/denoising/recon/R1_longrecon15db.wav"><i class="bi bi-play-fill"></i></td>
+                </tr>
+                <tr>
+                    <th>20</th>
+                    <td data-audio="audio/denoising/damaged/R1_longdamaged20db.wav"><i class="bi bi-play-fill"></i></td>
+                    <td data-audio="audio/denoising/recon/R1_longrecon20db.wav"><i class="bi bi-play-fill"></i></td>
                 </tr>
             </tbody>
         </table>
@@ -210,60 +266,66 @@
                     <th>S-SPADE</th>
                     <th>CQT-diff</th>
                     <th>PAR</th>
+                    <th>PARv2</th>
 
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <th>Sample 1</th>
-                    <td data-audio="audio/declipping/original/MIDI-Unprocessed_XP_03_R1_2004_01-02_ORIG_MID--AUDIO_03_R1_2004_01_Track01_wav.wav"><span class="glyphicon">&#xe072;</span></td>
-                    <td data-audio="audio/declipping/1dB/clipped/MIDI-Unprocessed_XP_03_R1_2004_01-02_ORIG_MID--AUDIO_03_R1_2004_01_Track01_wav.wav"><span class="glyphicon">&#xe072;</span></td>
-                    <td data-audio="audio/declipping/1dB/SS-PEW/MIDI-Unprocessed_XP_03_R1_2004_01-02_ORIG_MID--AUDIO_03_R1_2004_01_Track01_wav.wav"><span class="glyphicon">&#xe072;</span></td>
-                    <td data-audio="audio/declipping/1dB/A-SPADE/MIDI-Unprocessed_XP_03_R1_2004_01-02_ORIG_MID--AUDIO_03_R1_2004_01_Track01_wav.wav"><span class="glyphicon">&#xe072;</span></td>
-                    <td data-audio="audio/declipping/1dB/S-SPADE/MIDI-Unprocessed_XP_03_R1_2004_01-02_ORIG_MID--AUDIO_03_R1_2004_01_Track01_wav.wav"><span class="glyphicon">&#xe072;</span></td>
-                    <td data-audio="audio/declipping/1dB/CQT/MIDI-Unprocessed_XP_03_R1_2004_01-02_ORIG_MID--AUDIO_03_R1_2004_01_Track01_wav.wav"><span class="glyphicon">&#xe072;</span></td>
-                    <td data-audio="audio/declipping/1dB/PAR/MIDI-Unprocessed_XP_03_R1_2004_01-02_ORIG_MID--AUDIO_03_R1_2004_01_Track01_wav.wav"><span class="glyphicon">&#xe072;</span></td>
+                    <td data-audio="audio/declipping/original/MIDI-Unprocessed_XP_03_R1_2004_01-02_ORIG_MID--AUDIO_03_R1_2004_01_Track01_wav.wav"><i class="bi bi-play-fill"></i></td>
+                    <td data-audio="audio/declipping/1dB/clipped/MIDI-Unprocessed_XP_03_R1_2004_01-02_ORIG_MID--AUDIO_03_R1_2004_01_Track01_wav.wav"><i class="bi bi-play-fill"></i></td>
+                    <td data-audio="audio/declipping/1dB/SS-PEW/MIDI-Unprocessed_XP_03_R1_2004_01-02_ORIG_MID--AUDIO_03_R1_2004_01_Track01_wav.wav"><i class="bi bi-play-fill"></i></td>
+                    <td data-audio="audio/declipping/1dB/A-SPADE/MIDI-Unprocessed_XP_03_R1_2004_01-02_ORIG_MID--AUDIO_03_R1_2004_01_Track01_wav.wav"><i class="bi bi-play-fill"></i></td>
+                    <td data-audio="audio/declipping/1dB/S-SPADE/MIDI-Unprocessed_XP_03_R1_2004_01-02_ORIG_MID--AUDIO_03_R1_2004_01_Track01_wav.wav"><i class="bi bi-play-fill"></i></td>
+                    <td data-audio="audio/declipping/1dB/CQT/MIDI-Unprocessed_XP_03_R1_2004_01-02_ORIG_MID--AUDIO_03_R1_2004_01_Track01_wav.wav"><i class="bi bi-play-fill"></i></td>
+                    <td data-audio="audio/declipping/1dB/PAR/MIDI-Unprocessed_XP_03_R1_2004_01-02_ORIG_MID--AUDIO_03_R1_2004_01_Track01_wav.wav"><i class="bi bi-play-fill"></i></td>
+                    <td data-audio="audio/declipping/1dB/PARv2/MIDI-Unprocessed_XP_03_R1_2004_01-02_ORIG_MID--AUDIO_03_R1_2004_01_Track01_wav.wav"><i class="bi bi-play-fill"></i></td>
 
                 </tr>
                 <tr>
                     <th>Sample 2</th>
-                    <td data-audio="audio/declipping/original/MIDI-Unprocessed_15_R1_2009_01-02_ORIG_MID--AUDIO_15_R1_2009_15_R1_2009_02_WAV.wav"><span class="glyphicon">&#xe072;</span></td>
-                    <td data-audio="audio/declipping/1dB/clipped/MIDI-Unprocessed_15_R1_2009_01-02_ORIG_MID--AUDIO_15_R1_2009_15_R1_2009_02_WAV.wav"><span class="glyphicon">&#xe072;</span></td>
-                    <td data-audio="audio/declipping/1dB/SS-PEW/MIDI-Unprocessed_15_R1_2009_01-02_ORIG_MID--AUDIO_15_R1_2009_15_R1_2009_02_WAV.wav"><span class="glyphicon">&#xe072;</span></td>
-                    <td data-audio="audio/declipping/1dB/A-SPADE/MIDI-Unprocessed_15_R1_2009_01-02_ORIG_MID--AUDIO_15_R1_2009_15_R1_2009_02_WAV.wav"><span class="glyphicon">&#xe072;</span></td>
-                    <td data-audio="audio/declipping/1dB/S-SPADE/MIDI-Unprocessed_15_R1_2009_01-02_ORIG_MID--AUDIO_15_R1_2009_15_R1_2009_02_WAV.wav"><span class="glyphicon">&#xe072;</span></td>
-                    <td data-audio="audio/declipping/1dB/CQT/MIDI-Unprocessed_15_R1_2009_01-02_ORIG_MID--AUDIO_15_R1_2009_15_R1_2009_02_WAV.wav"><span class="glyphicon">&#xe072;</span></td>
-                    <td data-audio="audio/declipping/1dB/PAR/MIDI-Unprocessed_15_R1_2009_01-02_ORIG_MID--AUDIO_15_R1_2009_15_R1_2009_02_WAV.wav"><span class="glyphicon">&#xe072;</span></td>
+                    <td data-audio="audio/declipping/original/MIDI-Unprocessed_15_R1_2009_01-02_ORIG_MID--AUDIO_15_R1_2009_15_R1_2009_02_WAV.wav"><i class="bi bi-play-fill"></i></td>
+                    <td data-audio="audio/declipping/1dB/clipped/MIDI-Unprocessed_15_R1_2009_01-02_ORIG_MID--AUDIO_15_R1_2009_15_R1_2009_02_WAV.wav"><i class="bi bi-play-fill"></i></td>
+                    <td data-audio="audio/declipping/1dB/SS-PEW/MIDI-Unprocessed_15_R1_2009_01-02_ORIG_MID--AUDIO_15_R1_2009_15_R1_2009_02_WAV.wav"><i class="bi bi-play-fill"></i></td>
+                    <td data-audio="audio/declipping/1dB/A-SPADE/MIDI-Unprocessed_15_R1_2009_01-02_ORIG_MID--AUDIO_15_R1_2009_15_R1_2009_02_WAV.wav"><i class="bi bi-play-fill"></i></td>
+                    <td data-audio="audio/declipping/1dB/S-SPADE/MIDI-Unprocessed_15_R1_2009_01-02_ORIG_MID--AUDIO_15_R1_2009_15_R1_2009_02_WAV.wav"><i class="bi bi-play-fill"></i></td>
+                    <td data-audio="audio/declipping/1dB/CQT/MIDI-Unprocessed_15_R1_2009_01-02_ORIG_MID--AUDIO_15_R1_2009_15_R1_2009_02_WAV.wav"><i class="bi bi-play-fill"></i></td>
+                    <td data-audio="audio/declipping/1dB/PAR/MIDI-Unprocessed_15_R1_2009_01-02_ORIG_MID--AUDIO_15_R1_2009_15_R1_2009_02_WAV.wav"><i class="bi bi-play-fill"></i></td>
+                    <td data-audio="audio/declipping/1dB/PARv2/MIDI-Unprocessed_15_R1_2009_01-02_ORIG_MID--AUDIO_15_R1_2009_15_R1_2009_02_WAV.wav"><i class="bi bi-play-fill"></i></td>
                 </tr>
                 <tr>
                     <th>Sample 3</th>
-                    <td data-audio="audio/declipping/original/MIDI-Unprocessed_10_R1_2006_01-04_ORIG_MID--AUDIO_10_R1_2006_03_Track03_wav.wav"><span class="glyphicon">&#xe072;</span></td>
-                    <td data-audio="audio/declipping/1dB/clipped/MIDI-Unprocessed_10_R1_2006_01-04_ORIG_MID--AUDIO_10_R1_2006_03_Track03_wav.wav"><span class="glyphicon">&#xe072;</span></td>
-                    <td data-audio="audio/declipping/1dB/SS-PEW/MIDI-Unprocessed_10_R1_2006_01-04_ORIG_MID--AUDIO_10_R1_2006_03_Track03_wav.wav"><span class="glyphicon">&#xe072;</span></td>
-                    <td data-audio="audio/declipping/1dB/A-SPADE/MIDI-Unprocessed_10_R1_2006_01-04_ORIG_MID--AUDIO_10_R1_2006_03_Track03_wav.wav"><span class="glyphicon">&#xe072;</span></td>
-                    <td data-audio="audio/declipping/1dB/S-SPADE/MIDI-Unprocessed_10_R1_2006_01-04_ORIG_MID--AUDIO_10_R1_2006_03_Track03_wav.wav"><span class="glyphicon">&#xe072;</span></td>
-                    <td data-audio="audio/declipping/1dB/CQT/MIDI-Unprocessed_10_R1_2006_01-04_ORIG_MID--AUDIO_10_R1_2006_03_Track03_wav.wav"><span class="glyphicon">&#xe072;</span></td>
-                    <td data-audio="audio/declipping/1dB/PAR/MIDI-Unprocessed_10_R1_2006_01-04_ORIG_MID--AUDIO_10_R1_2006_03_Track03_wav.wav"><span class="glyphicon">&#xe072;</span></td>
+                    <td data-audio="audio/declipping/original/MIDI-Unprocessed_10_R1_2006_01-04_ORIG_MID--AUDIO_10_R1_2006_03_Track03_wav.wav"><i class="bi bi-play-fill"></i></td>
+                    <td data-audio="audio/declipping/1dB/clipped/MIDI-Unprocessed_10_R1_2006_01-04_ORIG_MID--AUDIO_10_R1_2006_03_Track03_wav.wav"><i class="bi bi-play-fill"></i></td>
+                    <td data-audio="audio/declipping/1dB/SS-PEW/MIDI-Unprocessed_10_R1_2006_01-04_ORIG_MID--AUDIO_10_R1_2006_03_Track03_wav.wav"><i class="bi bi-play-fill"></i></td>
+                    <td data-audio="audio/declipping/1dB/A-SPADE/MIDI-Unprocessed_10_R1_2006_01-04_ORIG_MID--AUDIO_10_R1_2006_03_Track03_wav.wav"><i class="bi bi-play-fill"></i></td>
+                    <td data-audio="audio/declipping/1dB/S-SPADE/MIDI-Unprocessed_10_R1_2006_01-04_ORIG_MID--AUDIO_10_R1_2006_03_Track03_wav.wav"><i class="bi bi-play-fill"></i></td>
+                    <td data-audio="audio/declipping/1dB/CQT/MIDI-Unprocessed_10_R1_2006_01-04_ORIG_MID--AUDIO_10_R1_2006_03_Track03_wav.wav"><i class="bi bi-play-fill"></i></td>
+                    <td data-audio="audio/declipping/1dB/PAR/MIDI-Unprocessed_10_R1_2006_01-04_ORIG_MID--AUDIO_10_R1_2006_03_Track03_wav.wav"><i class="bi bi-play-fill"></i></td>
+                    <td data-audio="audio/declipping/1dB/PARv2/MIDI-Unprocessed_10_R1_2006_01-04_ORIG_MID--AUDIO_10_R1_2006_03_Track03_wav.wav"><i class="bi bi-play-fill"></i></td>
                 </tr>
                 <tr>
                     <th>Sample 4</th>
-                    <td data-audio="audio/declipping/original/MIDI-Unprocessed_04_R1_2008_01-04_ORIG_MID--AUDIO_04_R1_2008_wav--4.wav"><span class="glyphicon">&#xe072;</span></td>
-                    <td data-audio="audio/declipping/1dB/clipped/MIDI-Unprocessed_04_R1_2008_01-04_ORIG_MID--AUDIO_04_R1_2008_wav--4.wav"><span class="glyphicon">&#xe072;</span></td>
-                    <td data-audio="audio/declipping/1dB/SS-PEW/MIDI-Unprocessed_04_R1_2008_01-04_ORIG_MID--AUDIO_04_R1_2008_wav--4.wav"><span class="glyphicon">&#xe072;</span></td>
-                    <td data-audio="audio/declipping/1dB/A-SPADE/MIDI-Unprocessed_04_R1_2008_01-04_ORIG_MID--AUDIO_04_R1_2008_wav--4.wav"><span class="glyphicon">&#xe072;</span></td>
-                    <td data-audio="audio/declipping/1dB/S-SPADE/MIDI-Unprocessed_04_R1_2008_01-04_ORIG_MID--AUDIO_04_R1_2008_wav--4.wav"><span class="glyphicon">&#xe072;</span></td>
-                    <td data-audio="audio/declipping/1dB/CQT/MIDI-Unprocessed_04_R1_2008_01-04_ORIG_MID--AUDIO_04_R1_2008_wav--4.wav"><span class="glyphicon">&#xe072;</span></td>
-                    <td data-audio="audio/declipping/1dB/PAR/MIDI-Unprocessed_04_R1_2008_01-04_ORIG_MID--AUDIO_04_R1_2008_wav--4.wav"><span class="glyphicon">&#xe072;</span></td>
+                    <td data-audio="audio/declipping/original/MIDI-Unprocessed_04_R1_2008_01-04_ORIG_MID--AUDIO_04_R1_2008_wav--4.wav"><i class="bi bi-play-fill"></i></td>
+                    <td data-audio="audio/declipping/1dB/clipped/MIDI-Unprocessed_04_R1_2008_01-04_ORIG_MID--AUDIO_04_R1_2008_wav--4.wav"><i class="bi bi-play-fill"></i></td>
+                    <td data-audio="audio/declipping/1dB/SS-PEW/MIDI-Unprocessed_04_R1_2008_01-04_ORIG_MID--AUDIO_04_R1_2008_wav--4.wav"><i class="bi bi-play-fill"></i></td>
+                    <td data-audio="audio/declipping/1dB/A-SPADE/MIDI-Unprocessed_04_R1_2008_01-04_ORIG_MID--AUDIO_04_R1_2008_wav--4.wav"><i class="bi bi-play-fill"></i></td>
+                    <td data-audio="audio/declipping/1dB/S-SPADE/MIDI-Unprocessed_04_R1_2008_01-04_ORIG_MID--AUDIO_04_R1_2008_wav--4.wav"><i class="bi bi-play-fill"></i></td>
+                    <td data-audio="audio/declipping/1dB/CQT/MIDI-Unprocessed_04_R1_2008_01-04_ORIG_MID--AUDIO_04_R1_2008_wav--4.wav"><i class="bi bi-play-fill"></i></td>
+                    <td data-audio="audio/declipping/1dB/PAR/MIDI-Unprocessed_04_R1_2008_01-04_ORIG_MID--AUDIO_04_R1_2008_wav--4.wav"><i class="bi bi-play-fill"></i></td>
+                    <td data-audio="audio/declipping/1dB/PARv2/MIDI-Unprocessed_04_R1_2008_01-04_ORIG_MID--AUDIO_04_R1_2008_wav--4.wav"><i class="bi bi-play-fill"></i></td>
                 </tr>
                 <tr>
                     <th>Sample 5</th>
-                    <td data-audio="audio/declipping/original/MIDI-Unprocessed_03_R1_2006_01-05_ORIG_MID--AUDIO_03_R1_2006_04_Track04_wav.wav"><span class="glyphicon">&#xe072;</span></td>
-                    <td data-audio="audio/declipping/1dB/clipped/MIDI-Unprocessed_03_R1_2006_01-05_ORIG_MID--AUDIO_03_R1_2006_04_Track04_wav.wav"><span class="glyphicon">&#xe072;</span></td>
-                    <td data-audio="audio/declipping/1dB/SS-PEW/MIDI-Unprocessed_03_R1_2006_01-05_ORIG_MID--AUDIO_03_R1_2006_04_Track04_wav.wav"><span class="glyphicon">&#xe072;</span></td>
-                    <td data-audio="audio/declipping/1dB/A-SPADE/MIDI-Unprocessed_03_R1_2006_01-05_ORIG_MID--AUDIO_03_R1_2006_04_Track04_wav.wav"><span class="glyphicon">&#xe072;</span></td>
-                    <td data-audio="audio/declipping/1dB/S-SPADE/MIDI-Unprocessed_03_R1_2006_01-05_ORIG_MID--AUDIO_03_R1_2006_04_Track04_wav.wav"><span class="glyphicon">&#xe072;</span></td>
-                    <td data-audio="audio/declipping/1dB/CQT/MIDI-Unprocessed_03_R1_2006_01-05_ORIG_MID--AUDIO_03_R1_2006_04_Track04_wav.wav"><span class="glyphicon">&#xe072;</span></td>
-                    <td data-audio="audio/declipping/1dB/PAR/MIDI-Unprocessed_03_R1_2006_01-05_ORIG_MID--AUDIO_03_R1_2006_04_Track04_wav.wav"><span class="glyphicon">&#xe072;</span></td>
+                    <td data-audio="audio/declipping/original/MIDI-Unprocessed_03_R1_2006_01-05_ORIG_MID--AUDIO_03_R1_2006_04_Track04_wav.wav"><i class="bi bi-play-fill"></i></td>
+                    <td data-audio="audio/declipping/1dB/clipped/MIDI-Unprocessed_03_R1_2006_01-05_ORIG_MID--AUDIO_03_R1_2006_04_Track04_wav.wav"><i class="bi bi-play-fill"></i></td>
+                    <td data-audio="audio/declipping/1dB/SS-PEW/MIDI-Unprocessed_03_R1_2006_01-05_ORIG_MID--AUDIO_03_R1_2006_04_Track04_wav.wav"><i class="bi bi-play-fill"></i></td>
+                    <td data-audio="audio/declipping/1dB/A-SPADE/MIDI-Unprocessed_03_R1_2006_01-05_ORIG_MID--AUDIO_03_R1_2006_04_Track04_wav.wav"><i class="bi bi-play-fill"></i></td>
+                    <td data-audio="audio/declipping/1dB/S-SPADE/MIDI-Unprocessed_03_R1_2006_01-05_ORIG_MID--AUDIO_03_R1_2006_04_Track04_wav.wav"><i class="bi bi-play-fill"></i></td>
+                    <td data-audio="audio/declipping/1dB/CQT/MIDI-Unprocessed_03_R1_2006_01-05_ORIG_MID--AUDIO_03_R1_2006_04_Track04_wav.wav"><i class="bi bi-play-fill"></i></td>
+                    <td data-audio="audio/declipping/1dB/PAR/MIDI-Unprocessed_03_R1_2006_01-05_ORIG_MID--AUDIO_03_R1_2006_04_Track04_wav.wav"><i class="bi bi-play-fill"></i></td>
+                    <td data-audio="audio/declipping/1dB/PARv2/MIDI-Unprocessed_03_R1_2006_01-05_ORIG_MID--AUDIO_03_R1_2006_04_Track04_wav.wav"><i class="bi bi-play-fill"></i></td>
                 </tr>
             </tbody>
         </table>
@@ -289,60 +351,66 @@
                     <th>S-SPADE</th>
                     <th>CQT-diff</th>
                     <th>PAR</th>
+                    <th>PARv2</th>
 
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <th>Sample 1</th>
-                    <td data-audio="audio/declipping/original/MIDI-Unprocessed_XP_03_R1_2004_01-02_ORIG_MID--AUDIO_03_R1_2004_01_Track01_wav.wav"><span class="glyphicon">&#xe072;</span></td>
-                    <td data-audio="audio/declipping/10dB/clipped/MIDI-Unprocessed_XP_03_R1_2004_01-02_ORIG_MID--AUDIO_03_R1_2004_01_Track01_wav.wav"><span class="glyphicon">&#xe072;</span></td>
-                    <td data-audio="audio/declipping/10dB/SS-PEW/MIDI-Unprocessed_XP_03_R1_2004_01-02_ORIG_MID--AUDIO_03_R1_2004_01_Track01_wav.wav"><span class="glyphicon">&#xe072;</span></td>
-                    <td data-audio="audio/declipping/10dB/A-SPADE/MIDI-Unprocessed_XP_03_R1_2004_01-02_ORIG_MID--AUDIO_03_R1_2004_01_Track01_wav.wav"><span class="glyphicon">&#xe072;</span></td>
-                    <td data-audio="audio/declipping/10dB/S-SPADE/MIDI-Unprocessed_XP_03_R1_2004_01-02_ORIG_MID--AUDIO_03_R1_2004_01_Track01_wav.wav"><span class="glyphicon">&#xe072;</span></td>
-                    <td data-audio="audio/declipping/10dB/CQT/MIDI-Unprocessed_XP_03_R1_2004_01-02_ORIG_MID--AUDIO_03_R1_2004_01_Track01_wav.wav"><span class="glyphicon">&#xe072;</span></td>
-                    <td data-audio="audio/declipping/10dB/PAR/MIDI-Unprocessed_XP_03_R1_2004_01-02_ORIG_MID--AUDIO_03_R1_2004_01_Track01_wav.wav"><span class="glyphicon">&#xe072;</span></td>
+                    <td data-audio="audio/declipping/original/MIDI-Unprocessed_XP_03_R1_2004_01-02_ORIG_MID--AUDIO_03_R1_2004_01_Track01_wav.wav"><i class="bi bi-play-fill"></i></td>
+                    <td data-audio="audio/declipping/10dB/clipped/MIDI-Unprocessed_XP_03_R1_2004_01-02_ORIG_MID--AUDIO_03_R1_2004_01_Track01_wav.wav"><i class="bi bi-play-fill"></i></td>
+                    <td data-audio="audio/declipping/10dB/SS-PEW/MIDI-Unprocessed_XP_03_R1_2004_01-02_ORIG_MID--AUDIO_03_R1_2004_01_Track01_wav.wav"><i class="bi bi-play-fill"></i></td>
+                    <td data-audio="audio/declipping/10dB/A-SPADE/MIDI-Unprocessed_XP_03_R1_2004_01-02_ORIG_MID--AUDIO_03_R1_2004_01_Track01_wav.wav"><i class="bi bi-play-fill"></i></td>
+                    <td data-audio="audio/declipping/10dB/S-SPADE/MIDI-Unprocessed_XP_03_R1_2004_01-02_ORIG_MID--AUDIO_03_R1_2004_01_Track01_wav.wav"><i class="bi bi-play-fill"></i></td>
+                    <td data-audio="audio/declipping/10dB/CQT/MIDI-Unprocessed_XP_03_R1_2004_01-02_ORIG_MID--AUDIO_03_R1_2004_01_Track01_wav.wav"><i class="bi bi-play-fill"></i></td>
+                    <td data-audio="audio/declipping/10dB/PAR/MIDI-Unprocessed_XP_03_R1_2004_01-02_ORIG_MID--AUDIO_03_R1_2004_01_Track01_wav.wav"><i class="bi bi-play-fill"></i></td>
+                    <td data-audio="audio/declipping/10dB/PARv2/MIDI-Unprocessed_XP_03_R1_2004_01-02_ORIG_MID--AUDIO_03_R1_2004_01_Track01_wav.wav"><i class="bi bi-play-fill"></i></td>
 
                 </tr>
                 <tr>
                     <th>Sample 2</th>
-                    <td data-audio="audio/declipping/original/MIDI-Unprocessed_15_R1_2009_01-02_ORIG_MID--AUDIO_15_R1_2009_15_R1_2009_02_WAV.wav"><span class="glyphicon">&#xe072;</span></td>
-                    <td data-audio="audio/declipping/10dB/clipped/MIDI-Unprocessed_15_R1_2009_01-02_ORIG_MID--AUDIO_15_R1_2009_15_R1_2009_02_WAV.wav"><span class="glyphicon">&#xe072;</span></td>
-                    <td data-audio="audio/declipping/10dB/SS-PEW/MIDI-Unprocessed_15_R1_2009_01-02_ORIG_MID--AUDIO_15_R1_2009_15_R1_2009_02_WAV.wav"><span class="glyphicon">&#xe072;</span></td>
-                    <td data-audio="audio/declipping/10dB/A-SPADE/MIDI-Unprocessed_15_R1_2009_01-02_ORIG_MID--AUDIO_15_R1_2009_15_R1_2009_02_WAV.wav"><span class="glyphicon">&#xe072;</span></td>
-                    <td data-audio="audio/declipping/10dB/S-SPADE/MIDI-Unprocessed_15_R1_2009_01-02_ORIG_MID--AUDIO_15_R1_2009_15_R1_2009_02_WAV.wav"><span class="glyphicon">&#xe072;</span></td>
-                    <td data-audio="audio/declipping/10dB/CQT/MIDI-Unprocessed_15_R1_2009_01-02_ORIG_MID--AUDIO_15_R1_2009_15_R1_2009_02_WAV.wav"><span class="glyphicon">&#xe072;</span></td>
-                    <td data-audio="audio/declipping/10dB/PAR/MIDI-Unprocessed_15_R1_2009_01-02_ORIG_MID--AUDIO_15_R1_2009_15_R1_2009_02_WAV.wav"><span class="glyphicon">&#xe072;</span></td>
+                    <td data-audio="audio/declipping/original/MIDI-Unprocessed_15_R1_2009_01-02_ORIG_MID--AUDIO_15_R1_2009_15_R1_2009_02_WAV.wav"><i class="bi bi-play-fill"></i></td>
+                    <td data-audio="audio/declipping/10dB/clipped/MIDI-Unprocessed_15_R1_2009_01-02_ORIG_MID--AUDIO_15_R1_2009_15_R1_2009_02_WAV.wav"><i class="bi bi-play-fill"></i></td>
+                    <td data-audio="audio/declipping/10dB/SS-PEW/MIDI-Unprocessed_15_R1_2009_01-02_ORIG_MID--AUDIO_15_R1_2009_15_R1_2009_02_WAV.wav"><i class="bi bi-play-fill"></i></td>
+                    <td data-audio="audio/declipping/10dB/A-SPADE/MIDI-Unprocessed_15_R1_2009_01-02_ORIG_MID--AUDIO_15_R1_2009_15_R1_2009_02_WAV.wav"><i class="bi bi-play-fill"></i></td>
+                    <td data-audio="audio/declipping/10dB/S-SPADE/MIDI-Unprocessed_15_R1_2009_01-02_ORIG_MID--AUDIO_15_R1_2009_15_R1_2009_02_WAV.wav"><i class="bi bi-play-fill"></i></td>
+                    <td data-audio="audio/declipping/10dB/CQT/MIDI-Unprocessed_15_R1_2009_01-02_ORIG_MID--AUDIO_15_R1_2009_15_R1_2009_02_WAV.wav"><i class="bi bi-play-fill"></i></td>
+                    <td data-audio="audio/declipping/10dB/PAR/MIDI-Unprocessed_15_R1_2009_01-02_ORIG_MID--AUDIO_15_R1_2009_15_R1_2009_02_WAV.wav"><i class="bi bi-play-fill"></i></td>
+                    <td data-audio="audio/declipping/10dB/PARv2/MIDI-Unprocessed_15_R1_2009_01-02_ORIG_MID--AUDIO_15_R1_2009_15_R1_2009_02_WAV.wav"><i class="bi bi-play-fill"></i></td>
                 </tr>
                 <tr>
                     <th>Sample 3</th>
-                    <td data-audio="audio/declipping/original/MIDI-Unprocessed_10_R1_2006_01-04_ORIG_MID--AUDIO_10_R1_2006_03_Track03_wav.wav"><span class="glyphicon">&#xe072;</span></td>
-                    <td data-audio="audio/declipping/10dB/clipped/MIDI-Unprocessed_10_R1_2006_01-04_ORIG_MID--AUDIO_10_R1_2006_03_Track03_wav.wav"><span class="glyphicon">&#xe072;</span></td>
-                    <td data-audio="audio/declipping/10dB/SS-PEW/MIDI-Unprocessed_10_R1_2006_01-04_ORIG_MID--AUDIO_10_R1_2006_03_Track03_wav.wav"><span class="glyphicon">&#xe072;</span></td>
-                    <td data-audio="audio/declipping/10dB/A-SPADE/MIDI-Unprocessed_10_R1_2006_01-04_ORIG_MID--AUDIO_10_R1_2006_03_Track03_wav.wav"><span class="glyphicon">&#xe072;</span></td>
-                    <td data-audio="audio/declipping/10dB/S-SPADE/MIDI-Unprocessed_10_R1_2006_01-04_ORIG_MID--AUDIO_10_R1_2006_03_Track03_wav.wav"><span class="glyphicon">&#xe072;</span></td>
-                    <td data-audio="audio/declipping/10dB/CQT/MIDI-Unprocessed_10_R1_2006_01-04_ORIG_MID--AUDIO_10_R1_2006_03_Track03_wav.wav"><span class="glyphicon">&#xe072;</span></td>
-                    <td data-audio="audio/declipping/10dB/PAR/MIDI-Unprocessed_10_R1_2006_01-04_ORIG_MID--AUDIO_10_R1_2006_03_Track03_wav.wav"><span class="glyphicon">&#xe072;</span></td>
+                    <td data-audio="audio/declipping/original/MIDI-Unprocessed_10_R1_2006_01-04_ORIG_MID--AUDIO_10_R1_2006_03_Track03_wav.wav"><i class="bi bi-play-fill"></i></td>
+                    <td data-audio="audio/declipping/10dB/clipped/MIDI-Unprocessed_10_R1_2006_01-04_ORIG_MID--AUDIO_10_R1_2006_03_Track03_wav.wav"><i class="bi bi-play-fill"></i></td>
+                    <td data-audio="audio/declipping/10dB/SS-PEW/MIDI-Unprocessed_10_R1_2006_01-04_ORIG_MID--AUDIO_10_R1_2006_03_Track03_wav.wav"><i class="bi bi-play-fill"></i></td>
+                    <td data-audio="audio/declipping/10dB/A-SPADE/MIDI-Unprocessed_10_R1_2006_01-04_ORIG_MID--AUDIO_10_R1_2006_03_Track03_wav.wav"><i class="bi bi-play-fill"></i></td>
+                    <td data-audio="audio/declipping/10dB/S-SPADE/MIDI-Unprocessed_10_R1_2006_01-04_ORIG_MID--AUDIO_10_R1_2006_03_Track03_wav.wav"><i class="bi bi-play-fill"></i></td>
+                    <td data-audio="audio/declipping/10dB/CQT/MIDI-Unprocessed_10_R1_2006_01-04_ORIG_MID--AUDIO_10_R1_2006_03_Track03_wav.wav"><i class="bi bi-play-fill"></i></td>
+                    <td data-audio="audio/declipping/10dB/PAR/MIDI-Unprocessed_10_R1_2006_01-04_ORIG_MID--AUDIO_10_R1_2006_03_Track03_wav.wav"><i class="bi bi-play-fill"></i></td>
+                    <td data-audio="audio/declipping/10dB/PARv2/MIDI-Unprocessed_10_R1_2006_01-04_ORIG_MID--AUDIO_10_R1_2006_03_Track03_wav.wav"><i class="bi bi-play-fill"></i></td>
                 </tr>
                 <tr>
                     <th>Sample 4</th>
-                    <td data-audio="audio/declipping/original/MIDI-Unprocessed_04_R1_2008_01-04_ORIG_MID--AUDIO_04_R1_2008_wav--4.wav"><span class="glyphicon">&#xe072;</span></td>
-                    <td data-audio="audio/declipping/10dB/clipped/MIDI-Unprocessed_04_R1_2008_01-04_ORIG_MID--AUDIO_04_R1_2008_wav--4.wav"><span class="glyphicon">&#xe072;</span></td>
-                    <td data-audio="audio/declipping/10dB/SS-PEW/MIDI-Unprocessed_04_R1_2008_01-04_ORIG_MID--AUDIO_04_R1_2008_wav--4.wav"><span class="glyphicon">&#xe072;</span></td>
-                    <td data-audio="audio/declipping/10dB/A-SPADE/MIDI-Unprocessed_04_R1_2008_01-04_ORIG_MID--AUDIO_04_R1_2008_wav--4.wav"><span class="glyphicon">&#xe072;</span></td>
-                    <td data-audio="audio/declipping/10dB/S-SPADE/MIDI-Unprocessed_04_R1_2008_01-04_ORIG_MID--AUDIO_04_R1_2008_wav--4.wav"><span class="glyphicon">&#xe072;</span></td>
-                    <td data-audio="audio/declipping/10dB/CQT/MIDI-Unprocessed_04_R1_2008_01-04_ORIG_MID--AUDIO_04_R1_2008_wav--4.wav"><span class="glyphicon">&#xe072;</span></td>
-                    <td data-audio="audio/declipping/10dB/PAR/MIDI-Unprocessed_04_R1_2008_01-04_ORIG_MID--AUDIO_04_R1_2008_wav--4.wav"><span class="glyphicon">&#xe072;</span></td>
+                    <td data-audio="audio/declipping/original/MIDI-Unprocessed_04_R1_2008_01-04_ORIG_MID--AUDIO_04_R1_2008_wav--4.wav"><i class="bi bi-play-fill"></i></td>
+                    <td data-audio="audio/declipping/10dB/clipped/MIDI-Unprocessed_04_R1_2008_01-04_ORIG_MID--AUDIO_04_R1_2008_wav--4.wav"><i class="bi bi-play-fill"></i></td>
+                    <td data-audio="audio/declipping/10dB/SS-PEW/MIDI-Unprocessed_04_R1_2008_01-04_ORIG_MID--AUDIO_04_R1_2008_wav--4.wav"><i class="bi bi-play-fill"></i></td>
+                    <td data-audio="audio/declipping/10dB/A-SPADE/MIDI-Unprocessed_04_R1_2008_01-04_ORIG_MID--AUDIO_04_R1_2008_wav--4.wav"><i class="bi bi-play-fill"></i></td>
+                    <td data-audio="audio/declipping/10dB/S-SPADE/MIDI-Unprocessed_04_R1_2008_01-04_ORIG_MID--AUDIO_04_R1_2008_wav--4.wav"><i class="bi bi-play-fill"></i></td>
+                    <td data-audio="audio/declipping/10dB/CQT/MIDI-Unprocessed_04_R1_2008_01-04_ORIG_MID--AUDIO_04_R1_2008_wav--4.wav"><i class="bi bi-play-fill"></i></td>
+                    <td data-audio="audio/declipping/10dB/PAR/MIDI-Unprocessed_04_R1_2008_01-04_ORIG_MID--AUDIO_04_R1_2008_wav--4.wav"><i class="bi bi-play-fill"></i></td>
+                    <td data-audio="audio/declipping/10dB/PARv2/MIDI-Unprocessed_04_R1_2008_01-04_ORIG_MID--AUDIO_04_R1_2008_wav--4.wav"><i class="bi bi-play-fill"></i></td>
                 </tr>
                 <tr>
                     <th>Sample 5</th>
-                    <td data-audio="audio/declipping/original/MIDI-Unprocessed_03_R1_2006_01-05_ORIG_MID--AUDIO_03_R1_2006_04_Track04_wav.wav"><span class="glyphicon">&#xe072;</span></td>
-                    <td data-audio="audio/declipping/10dB/clipped/MIDI-Unprocessed_03_R1_2006_01-05_ORIG_MID--AUDIO_03_R1_2006_04_Track04_wav.wav"><span class="glyphicon">&#xe072;</span></td>
-                    <td data-audio="audio/declipping/10dB/SS-PEW/MIDI-Unprocessed_03_R1_2006_01-05_ORIG_MID--AUDIO_03_R1_2006_04_Track04_wav.wav"><span class="glyphicon">&#xe072;</span></td>
-                    <td data-audio="audio/declipping/10dB/A-SPADE/MIDI-Unprocessed_03_R1_2006_01-05_ORIG_MID--AUDIO_03_R1_2006_04_Track04_wav.wav"><span class="glyphicon">&#xe072;</span></td>
-                    <td data-audio="audio/declipping/10dB/S-SPADE/MIDI-Unprocessed_03_R1_2006_01-05_ORIG_MID--AUDIO_03_R1_2006_04_Track04_wav.wav"><span class="glyphicon">&#xe072;</span></td>
-                    <td data-audio="audio/declipping/10dB/CQT/MIDI-Unprocessed_03_R1_2006_01-05_ORIG_MID--AUDIO_03_R1_2006_04_Track04_wav.wav"><span class="glyphicon">&#xe072;</span></td>
-                    <td data-audio="audio/declipping/10dB/PAR/MIDI-Unprocessed_03_R1_2006_01-05_ORIG_MID--AUDIO_03_R1_2006_04_Track04_wav.wav"><span class="glyphicon">&#xe072;</span></td>
+                    <td data-audio="audio/declipping/original/MIDI-Unprocessed_03_R1_2006_01-05_ORIG_MID--AUDIO_03_R1_2006_04_Track04_wav.wav"><i class="bi bi-play-fill"></i></td>
+                    <td data-audio="audio/declipping/10dB/clipped/MIDI-Unprocessed_03_R1_2006_01-05_ORIG_MID--AUDIO_03_R1_2006_04_Track04_wav.wav"><i class="bi bi-play-fill"></i></td>
+                    <td data-audio="audio/declipping/10dB/SS-PEW/MIDI-Unprocessed_03_R1_2006_01-05_ORIG_MID--AUDIO_03_R1_2006_04_Track04_wav.wav"><i class="bi bi-play-fill"></i></td>
+                    <td data-audio="audio/declipping/10dB/A-SPADE/MIDI-Unprocessed_03_R1_2006_01-05_ORIG_MID--AUDIO_03_R1_2006_04_Track04_wav.wav"><i class="bi bi-play-fill"></i></td>
+                    <td data-audio="audio/declipping/10dB/S-SPADE/MIDI-Unprocessed_03_R1_2006_01-05_ORIG_MID--AUDIO_03_R1_2006_04_Track04_wav.wav"><i class="bi bi-play-fill"></i></td>
+                    <td data-audio="audio/declipping/10dB/CQT/MIDI-Unprocessed_03_R1_2006_01-05_ORIG_MID--AUDIO_03_R1_2006_04_Track04_wav.wav"><i class="bi bi-play-fill"></i></td>
+                    <td data-audio="audio/declipping/10dB/PAR/MIDI-Unprocessed_03_R1_2006_01-05_ORIG_MID--AUDIO_03_R1_2006_04_Track04_wav.wav"><i class="bi bi-play-fill"></i></td>
+                    <td data-audio="audio/declipping/10dB/PARv2/MIDI-Unprocessed_03_R1_2006_01-05_ORIG_MID--AUDIO_03_R1_2006_04_Track04_wav.wav"><i class="bi bi-play-fill"></i></td>
                 </tr>
             </tbody>
         </table>
@@ -375,21 +443,21 @@
             <tbody>
                 <tr>
                     
-                    <td rowspan="2" data-audio="audio/cs/sample1/MIDI-Unprocessed_Chamber5_MID--AUDIO_18_R3_2018_wav--1.wav"><span class="glyphicon">&#xe072;</span></td>
+                    <td rowspan="2" data-audio="audio/cs/sample1/MIDI-Unprocessed_Chamber5_MID--AUDIO_18_R3_2018_wav--1.wav"><i class="bi bi-play-fill"></i></td>
                     <th>Damaged</th>
-                    <td data-audio="audio/cs/sample1/MIDI-Unprocessed_Chamber5_MID--AUDIO_18_R3_2018_wav--1damagedmissing50perc.wav"><span class="glyphicon">&#xe072;</span></td>
-                    <td data-audio="audio/cs/sample1/MIDI-Unprocessed_Chamber5_MID--AUDIO_18_R3_2018_wav--1damagedmissing60perc.wav"><span class="glyphicon">&#xe072;</span></td>
-                    <td data-audio="audio/cs/sample1/MIDI-Unprocessed_Chamber5_MID--AUDIO_18_R3_2018_wav--1damagedmissing70perc.wav"><span class="glyphicon">&#xe072;</span></td>
-                    <td data-audio="audio/cs/sample1/MIDI-Unprocessed_Chamber5_MID--AUDIO_18_R3_2018_wav--1damagedmissing80perc.wav"><span class="glyphicon">&#xe072;</span></td>
-                    <td data-audio="audio/cs/sample1/MIDI-Unprocessed_Chamber5_MID--AUDIO_18_R3_2018_wav--1damagedmissing90perc.wav"><span class="glyphicon">&#xe072;</span></td>
+                    <td data-audio="audio/cs/sample1/MIDI-Unprocessed_Chamber5_MID--AUDIO_18_R3_2018_wav--1damagedmissing50perc.wav"><i class="bi bi-play-fill"></i></td>
+                    <td data-audio="audio/cs/sample1/MIDI-Unprocessed_Chamber5_MID--AUDIO_18_R3_2018_wav--1damagedmissing60perc.wav"><i class="bi bi-play-fill"></i></td>
+                    <td data-audio="audio/cs/sample1/MIDI-Unprocessed_Chamber5_MID--AUDIO_18_R3_2018_wav--1damagedmissing70perc.wav"><i class="bi bi-play-fill"></i></td>
+                    <td data-audio="audio/cs/sample1/MIDI-Unprocessed_Chamber5_MID--AUDIO_18_R3_2018_wav--1damagedmissing80perc.wav"><i class="bi bi-play-fill"></i></td>
+                    <td data-audio="audio/cs/sample1/MIDI-Unprocessed_Chamber5_MID--AUDIO_18_R3_2018_wav--1damagedmissing90perc.wav"><i class="bi bi-play-fill"></i></td>
                 </tr>
                 <tr>
                     <th>Reconstructed</th>
-                    <td data-audio="audio/cs/sample1/MIDI-Unprocessed_Chamber5_MID--AUDIO_18_R3_2018_wav--1reconmissing50perc.wav"><span class="glyphicon">&#xe072;</span></td>
-                    <td data-audio="audio/cs/sample1/MIDI-Unprocessed_Chamber5_MID--AUDIO_18_R3_2018_wav--1reconmissing60perc.wav"><span class="glyphicon">&#xe072;</span></td>
-                    <td data-audio="audio/cs/sample1/MIDI-Unprocessed_Chamber5_MID--AUDIO_18_R3_2018_wav--1reconmissing70perc.wav"><span class="glyphicon">&#xe072;</span></td>
-                    <td data-audio="audio/cs/sample1/MIDI-Unprocessed_Chamber5_MID--AUDIO_18_R3_2018_wav--1reconmissing80perc.wav"><span class="glyphicon">&#xe072;</span></td>
-                    <td data-audio="audio/cs/sample1/MIDI-Unprocessed_Chamber5_MID--AUDIO_18_R3_2018_wav--1reconmissing90perc.wav"><span class="glyphicon">&#xe072;</span></td>
+                    <td data-audio="audio/cs/sample1/MIDI-Unprocessed_Chamber5_MID--AUDIO_18_R3_2018_wav--1reconmissing50perc.wav"><i class="bi bi-play-fill"></i></td>
+                    <td data-audio="audio/cs/sample1/MIDI-Unprocessed_Chamber5_MID--AUDIO_18_R3_2018_wav--1reconmissing60perc.wav"><i class="bi bi-play-fill"></i></td>
+                    <td data-audio="audio/cs/sample1/MIDI-Unprocessed_Chamber5_MID--AUDIO_18_R3_2018_wav--1reconmissing70perc.wav"><i class="bi bi-play-fill"></i></td>
+                    <td data-audio="audio/cs/sample1/MIDI-Unprocessed_Chamber5_MID--AUDIO_18_R3_2018_wav--1reconmissing80perc.wav"><i class="bi bi-play-fill"></i></td>
+                    <td data-audio="audio/cs/sample1/MIDI-Unprocessed_Chamber5_MID--AUDIO_18_R3_2018_wav--1reconmissing90perc.wav"><i class="bi bi-play-fill"></i></td>
                 </tr>
             </tbody>
         </table>
@@ -410,21 +478,21 @@
             <tbody>
                 <tr>
                     
-                    <td rowspan="2" data-audio="audio/cs/sample2/MIDI-Unprocessed_Recital9-11_MID--AUDIO_09_R1_2018_wav--6.wav"><span class="glyphicon">&#xe072;</span></td>
+                    <td rowspan="2" data-audio="audio/cs/sample2/MIDI-Unprocessed_Recital9-11_MID--AUDIO_09_R1_2018_wav--6.wav"><i class="bi bi-play-fill"></i></td>
                     <th>Damaged</th>
-                    <td data-audio="audio/cs/sample2/MIDI-Unprocessed_Recital9-11_MID--AUDIO_09_R1_2018_wav--6damagedmissing50perc.wav"><span class="glyphicon">&#xe072;</span></td>
-                    <td data-audio="audio/cs/sample2/MIDI-Unprocessed_Recital9-11_MID--AUDIO_09_R1_2018_wav--6damagedmissing60perc.wav"><span class="glyphicon">&#xe072;</span></td>
-                    <td data-audio="audio/cs/sample2/MIDI-Unprocessed_Recital9-11_MID--AUDIO_09_R1_2018_wav--6damagedmissing70perc.wav"><span class="glyphicon">&#xe072;</span></td>
-                    <td data-audio="audio/cs/sample2/MIDI-Unprocessed_Recital9-11_MID--AUDIO_09_R1_2018_wav--6damagedmissing80perc.wav"><span class="glyphicon">&#xe072;</span></td>
-                    <td data-audio="audio/cs/sample2/MIDI-Unprocessed_Recital9-11_MID--AUDIO_09_R1_2018_wav--6damagedmissing90perc.wav"><span class="glyphicon">&#xe072;</span></td>
+                    <td data-audio="audio/cs/sample2/MIDI-Unprocessed_Recital9-11_MID--AUDIO_09_R1_2018_wav--6damagedmissing50perc.wav"><i class="bi bi-play-fill"></i></td>
+                    <td data-audio="audio/cs/sample2/MIDI-Unprocessed_Recital9-11_MID--AUDIO_09_R1_2018_wav--6damagedmissing60perc.wav"><i class="bi bi-play-fill"></i></td>
+                    <td data-audio="audio/cs/sample2/MIDI-Unprocessed_Recital9-11_MID--AUDIO_09_R1_2018_wav--6damagedmissing70perc.wav"><i class="bi bi-play-fill"></i></td>
+                    <td data-audio="audio/cs/sample2/MIDI-Unprocessed_Recital9-11_MID--AUDIO_09_R1_2018_wav--6damagedmissing80perc.wav"><i class="bi bi-play-fill"></i></td>
+                    <td data-audio="audio/cs/sample2/MIDI-Unprocessed_Recital9-11_MID--AUDIO_09_R1_2018_wav--6damagedmissing90perc.wav"><i class="bi bi-play-fill"></i></td>
                 </tr>
                 <tr>
                     <th>Reconstructed</th>
-                    <td data-audio="audio/cs/sample2/MIDI-Unprocessed_Recital9-11_MID--AUDIO_09_R1_2018_wav--6reconmissing50perc.wav"><span class="glyphicon">&#xe072;</span></td>
-                    <td data-audio="audio/cs/sample2/MIDI-Unprocessed_Recital9-11_MID--AUDIO_09_R1_2018_wav--6reconmissing60perc.wav"><span class="glyphicon">&#xe072;</span></td>
-                    <td data-audio="audio/cs/sample2/MIDI-Unprocessed_Recital9-11_MID--AUDIO_09_R1_2018_wav--6reconmissing70perc.wav"><span class="glyphicon">&#xe072;</span></td>
-                    <td data-audio="audio/cs/sample2/MIDI-Unprocessed_Recital9-11_MID--AUDIO_09_R1_2018_wav--6reconmissing80perc.wav"><span class="glyphicon">&#xe072;</span></td>
-                    <td data-audio="audio/cs/sample2/MIDI-Unprocessed_Recital9-11_MID--AUDIO_09_R1_2018_wav--6reconmissing90perc.wav"><span class="glyphicon">&#xe072;</span></td>
+                    <td data-audio="audio/cs/sample2/MIDI-Unprocessed_Recital9-11_MID--AUDIO_09_R1_2018_wav--6reconmissing50perc.wav"><i class="bi bi-play-fill"></i></td>
+                    <td data-audio="audio/cs/sample2/MIDI-Unprocessed_Recital9-11_MID--AUDIO_09_R1_2018_wav--6reconmissing60perc.wav"><i class="bi bi-play-fill"></i></td>
+                    <td data-audio="audio/cs/sample2/MIDI-Unprocessed_Recital9-11_MID--AUDIO_09_R1_2018_wav--6reconmissing70perc.wav"><i class="bi bi-play-fill"></i></td>
+                    <td data-audio="audio/cs/sample2/MIDI-Unprocessed_Recital9-11_MID--AUDIO_09_R1_2018_wav--6reconmissing80perc.wav"><i class="bi bi-play-fill"></i></td>
+                    <td data-audio="audio/cs/sample2/MIDI-Unprocessed_Recital9-11_MID--AUDIO_09_R1_2018_wav--6reconmissing90perc.wav"><i class="bi bi-play-fill"></i></td>
                 </tr>
             </tbody>
         </table>
@@ -446,21 +514,21 @@
             <tbody>
                 <tr>
                     
-                    <td rowspan="2" data-audio="audio/cs/sample3/MIDI-Unprocessed_Schubert10-12_MID--AUDIO_20_R2_2018_wav.wav"><span class="glyphicon">&#xe072;</span></td>
+                    <td rowspan="2" data-audio="audio/cs/sample3/MIDI-Unprocessed_Schubert10-12_MID--AUDIO_20_R2_2018_wav.wav"><i class="bi bi-play-fill"></i></td>
                     <th>Damaged</th>
-                    <td data-audio="audio/cs/sample3/MIDI-Unprocessed_Schubert10-12_MID--AUDIO_20_R2_2018_wavdamagedmissing50perc.wav"><span class="glyphicon">&#xe072;</span></td>
-                    <td data-audio="audio/cs/sample3/MIDI-Unprocessed_Schubert10-12_MID--AUDIO_20_R2_2018_wavdamagedmissing60perc.wav"><span class="glyphicon">&#xe072;</span></td>
-                    <td data-audio="audio/cs/sample3/MIDI-Unprocessed_Schubert10-12_MID--AUDIO_20_R2_2018_wavdamagedmissing70perc.wav"><span class="glyphicon">&#xe072;</span></td>
-                    <td data-audio="audio/cs/sample3/MIDI-Unprocessed_Schubert10-12_MID--AUDIO_20_R2_2018_wavdamagedmissing80perc.wav"><span class="glyphicon">&#xe072;</span></td>
-                    <td data-audio="audio/cs/sample3/MIDI-Unprocessed_Schubert10-12_MID--AUDIO_20_R2_2018_wavdamagedmissing90perc.wav"><span class="glyphicon">&#xe072;</span></td>
+                    <td data-audio="audio/cs/sample3/MIDI-Unprocessed_Schubert10-12_MID--AUDIO_20_R2_2018_wavdamagedmissing50perc.wav"><i class="bi bi-play-fill"></i></td>
+                    <td data-audio="audio/cs/sample3/MIDI-Unprocessed_Schubert10-12_MID--AUDIO_20_R2_2018_wavdamagedmissing60perc.wav"><i class="bi bi-play-fill"></i></td>
+                    <td data-audio="audio/cs/sample3/MIDI-Unprocessed_Schubert10-12_MID--AUDIO_20_R2_2018_wavdamagedmissing70perc.wav"><i class="bi bi-play-fill"></i></td>
+                    <td data-audio="audio/cs/sample3/MIDI-Unprocessed_Schubert10-12_MID--AUDIO_20_R2_2018_wavdamagedmissing80perc.wav"><i class="bi bi-play-fill"></i></td>
+                    <td data-audio="audio/cs/sample3/MIDI-Unprocessed_Schubert10-12_MID--AUDIO_20_R2_2018_wavdamagedmissing90perc.wav"><i class="bi bi-play-fill"></i></td>
                 </tr>
                 <tr>
                     <th>Reconstructed</th>
-                    <td data-audio="audio/cs/sample3/MIDI-Unprocessed_Schubert10-12_MID--AUDIO_20_R2_2018_wavreconmissing50perc.wav"><span class="glyphicon">&#xe072;</span></td>
-                    <td data-audio="audio/cs/sample3/MIDI-Unprocessed_Schubert10-12_MID--AUDIO_20_R2_2018_wavreconmissing60perc.wav"><span class="glyphicon">&#xe072;</span></td>
-                    <td data-audio="audio/cs/sample3/MIDI-Unprocessed_Schubert10-12_MID--AUDIO_20_R2_2018_wavreconmissing70perc.wav"><span class="glyphicon">&#xe072;</span></td>
-                    <td data-audio="audio/cs/sample3/MIDI-Unprocessed_Schubert10-12_MID--AUDIO_20_R2_2018_wavreconmissing80perc.wav"><span class="glyphicon">&#xe072;</span></td>
-                    <td data-audio="audio/cs/sample3/MIDI-Unprocessed_Schubert10-12_MID--AUDIO_20_R2_2018_wavreconmissing90perc.wav"><span class="glyphicon">&#xe072;</span></td>
+                    <td data-audio="audio/cs/sample3/MIDI-Unprocessed_Schubert10-12_MID--AUDIO_20_R2_2018_wavreconmissing50perc.wav"><i class="bi bi-play-fill"></i></td>
+                    <td data-audio="audio/cs/sample3/MIDI-Unprocessed_Schubert10-12_MID--AUDIO_20_R2_2018_wavreconmissing60perc.wav"><i class="bi bi-play-fill"></i></td>
+                    <td data-audio="audio/cs/sample3/MIDI-Unprocessed_Schubert10-12_MID--AUDIO_20_R2_2018_wavreconmissing70perc.wav"><i class="bi bi-play-fill"></i></td>
+                    <td data-audio="audio/cs/sample3/MIDI-Unprocessed_Schubert10-12_MID--AUDIO_20_R2_2018_wavreconmissing80perc.wav"><i class="bi bi-play-fill"></i></td>
+                    <td data-audio="audio/cs/sample3/MIDI-Unprocessed_Schubert10-12_MID--AUDIO_20_R2_2018_wavreconmissing90perc.wav"><i class="bi bi-play-fill"></i></td>
                 </tr>
             </tbody>
         </table>
@@ -491,21 +559,21 @@
                 <tbody>
                     <tr>
                         <th>Vln+Pno</th>
-                        <td data-audio="audio/vocoder/original_vln_piano.wav"><span class="glyphicon">&#xe072;</span></td>
-                        <td data-audio="audio/vocoder/damaged_vln_pno.wav"><span class="glyphicon">&#xe072;</span></td>
-                        <td data-audio="audio/vocoder/recon_vln_pno.wav"><span class="glyphicon">&#xe072;</span></td>
+                        <td data-audio="audio/vocoder/original_vln_piano.wav"><i class="bi bi-play-fill"></i></td>
+                        <td data-audio="audio/vocoder/damaged_vln_pno.wav"><i class="bi bi-play-fill"></i></td>
+                        <td data-audio="audio/vocoder/recon_vln_pno.wav"><i class="bi bi-play-fill"></i></td>
                     </tr>
                     <tr>
                         <th>Accordion</th>
-                        <td data-audio="audio/vocoder/original_accordion.wav"><span class="glyphicon">&#xe072;</span></td>
-                        <td data-audio="audio/vocoder/damaged_accordion.wav"><span class="glyphicon">&#xe072;</span></td>
-                        <td data-audio="audio/vocoder/recon_accordion.wav"><span class="glyphicon">&#xe072;</span></td>
+                        <td data-audio="audio/vocoder/original_accordion.wav"><i class="bi bi-play-fill"></i></td>
+                        <td data-audio="audio/vocoder/damaged_accordion.wav"><i class="bi bi-play-fill"></i></td>
+                        <td data-audio="audio/vocoder/recon_accordion.wav"><i class="bi bi-play-fill"></i></td>
                     </tr>
                     <tr>
                         <th>Violin</th>
-                        <td data-audio="audio/vocoder/original_violin.wav"><span class="glyphicon">&#xe072;</span></td>
-                        <td data-audio="audio/vocoder/damaged_violin.wav"><span class="glyphicon">&#xe072;</span></td>
-                        <td data-audio="audio/vocoder/recon_violin.wav"><span class="glyphicon">&#xe072;</span></td>
+                        <td data-audio="audio/vocoder/original_violin.wav"><i class="bi bi-play-fill"></i></td>
+                        <td data-audio="audio/vocoder/damaged_violin.wav"><i class="bi bi-play-fill"></i></td>
+                        <td data-audio="audio/vocoder/recon_violin.wav"><i class="bi bi-play-fill"></i></td>
                     </tr>
                 </tbody>
             </table>
